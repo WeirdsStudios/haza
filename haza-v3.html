@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haza Munguia — Sitios Web y Apps para Negocios en México</title>
+<meta name="description" content="¿Qué necesita tu negocio? Responde 3 preguntas y te digo exactamente qué solución digital es para ti, cuánto cuesta y cuándo estaría lista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAFAF7;
+  --surface:#F2EDE5;
+  --white:#FFFFFF;
+  --border:#E5DED4;
+  --border-h:#C8B8A8;
+  --orange:#E05C25;
+  --orange-light:#FEF2EB;
+  --orange-dark:#C44E1C;
+  --blue:#2563EB;
+  --blue-light:#EFF6FF;
+  --green:#16A34A;
+  --green-light:#F0FDF4;
+  --purple:#7C3AED;
+  --purple-light:#F5F3FF;
+  --text:#1A1614;
+  --muted:#7A706A;
+  --muted2:#B0A89E;
+  --r:16px;
+  --rl:24px;
+  --rxl:32px;
+  --f:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.15;font-weight:800}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:18px 0;background:rgba(250,250,247,0);backdrop-filter:blur(0px);transition:all .3s;border-bottom:1px solid transparent}
+nav.up{background:rgba(250,250,247,.96);backdrop-filter:blur(16px);border-color:var(--border);padding:14px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-size:21px;font-weight:800;color:var(--text);letter-spacing:-.02em}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-wa{display:flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;transition:background .2s,transform .15s}
+.nav-wa:hover{background:var(--orange-dark);transform:scale(.97)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.ham span{width:22px;height:2px;background:var(--text);border-radius:2px;display:block;transition:.3s;transform-origin:center}
+.ham.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.x span:nth-child(2){opacity:0}
+.ham.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob{display:none;position:fixed;inset:0;background:var(--white);z-index:299;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob.open{display:flex}
+.mob a{font-size:clamp(28px,7vw,44px);font-weight:800;color:var(--text)}
+.mob a.wa-mob{color:var(--orange)}
+.mob-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--muted)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:var(--bg);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(224,92,37,.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.05) 0%,transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;width:100%}
+.hero-text{}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--orange-light);border:1.5px solid rgba(224,92,37,.2);border-radius:100px;padding:6px 16px;font-size:13px;color:var(--orange);font-weight:700;margin-bottom:28px}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;animation:pulse-o 2s infinite}
+@keyframes pulse-o{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(36px,5vw,58px);letter-spacing:-.03em;margin-bottom:20px;line-height:1.1;color:var(--text)}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:36px;font-weight:400;max-width:480px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;padding:15px 30px;border-radius:100px;font-size:15px;font-weight:700;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--orange-dark);transform:scale(.97)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--border);color:var(--text);padding:13px 24px;border-radius:100px;font-size:14px;font-weight:600;transition:border-color .2s,background .2s}
+.btn-ghost:hover{border-color:var(--border-h);background:var(--surface)}
+.hero-trust{margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500}
+.trust-item::before{content:'✓';color:var(--green);font-weight:700}
+
+/* WIZARD CARD */
+.wizard-card{background:var(--white);border-radius:var(--rxl);box-shadow:0 4px 40px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);padding:40px;border:1px solid var(--border);position:relative}
+.wiz-progress{display:flex;align-items:center;gap:8px;margin-bottom:32px}
+.wiz-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s,transform .3s}
+.wiz-dot.active{background:var(--orange);transform:scale(1.3)}
+.wiz-dot.done{background:var(--orange)}
+.wiz-step-label{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:4px}
+.wiz-section{display:none}
+.wiz-section.show{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.wiz-q{font-size:clamp(17px,2.5vw,22px);font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-.02em;line-height:1.3}
+.wiz-sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opts.cols3{grid-template-columns:repeat(3,1fr)}
+.opt{background:var(--bg);border:2px solid var(--border);border-radius:var(--r);padding:16px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px;text-align:left}
+.opt:hover{border-color:var(--border-h);background:var(--surface)}
+.opt.sel{border-color:var(--orange);background:var(--orange-light)}
+.opt-emoji{font-size:28px;line-height:1;flex-shrink:0;margin-top:2px}
+.opt-info{}
+.opt-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.3}
+.opt.sel .opt-title{color:var(--orange-dark)}
+.opt-sub{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
+.wiz-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px;flex-wrap:wrap;gap:12px}
+.btn-back{background:none;border:none;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 0;font-family:var(--f)}
+.btn-back:hover{color:var(--text)}
+.btn-next{background:var(--orange);color:#fff;border:none;padding:13px 28px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--f);transition:background .2s,transform .15s;display:flex;align-items:center;gap:8px}
+.btn-next:hover{background:var(--orange-dark);transform:scale(.97)}
+.btn-next:disabled{background:var(--border);color:var(--muted2);cursor:not-allowed;transform:none}
+
+/* RESULT */
+#result-section{display:none}
+#result-section.show{display:block;animation:fadeUp .4s ease}
+.result-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.result-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.result-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.result-name{font-size:clamp(20px,2.5vw,26px);font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.2}
+.result-tag{font-size:13px;font-weight:500;color:var(--muted);margin-top:4px}
+.result-benefits{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.rb{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5}
+.rb-check{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px}
+.result-prices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.rp{background:var(--bg);border-radius:var(--r);padding:16px 18px;border:1.5px solid var(--border)}
+.rp-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.rp-val{font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:-.03em;color:var(--text);line-height:1}
+.rp-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.result-ctas{display:flex;flex-direction:column;gap:10px}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:14px 24px;border-radius:100px;font-size:15px;font-weight:700;transition:background .2s,transform .15s}
+.btn-wa:hover{background:#1fba5a;transform:scale(.97)}
+.btn-restart{background:none;border:none;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--f);margin-top:4px;text-align:center;display:block;width:100%;transition:color .2s}
+.btn-restart:hover{color:var(--text)}
+.result-note{background:var(--surface);border-radius:var(--r);padding:14px 16px;font-size:13px;color:var(--muted);line-height:1.6;border-left:3px solid var(--orange);margin-bottom:20px}
+
+/* ── EXAMPLES (IKEA SECTION) ── */
+.examples-wrap{background:var(--surface)}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:14px}
+.sec-h{font-size:clamp(28px,4vw,48px);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.sec-sub{font-size:17px;color:var(--muted);font-weight:400;line-height:1.7;max-width:520px}
+.examples-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}
+.ex-card{background:var(--white);border-radius:var(--rl);padding:36px;border:1.5px solid var(--border);transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default}
+.ex-card:hover{border-color:var(--border-h);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.ex-industry{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.ex-emoji{font-size:32px}
+.ex-type{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ex-headline{font-size:clamp(16px,2vw,19px);font-weight:700;color:var(--text);line-height:1.4;margin-bottom:12px;letter-spacing:-.01em}
+.ex-before-after{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.ex-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);line-height:1.5}
+.ex-arrow{font-size:14px;flex-shrink:0;margin-top:1px}
+.ex-result{background:var(--green-light);border:1.5px solid rgba(22,163,74,.2);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;margin-top:16px}
+.ex-result-n{font-size:22px;font-weight:800;color:var(--green)}
+.ex-result-t{font-size:13px;color:#166534;line-height:1.4;font-weight:500}
+
+/* ── PROCESS ── */
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;position:relative}
+.proc-card{padding:36px 32px;border-right:1.5px solid var(--border);position:relative}
+.proc-card:last-child{border-right:none}
+.proc-num{width:44px;height:44px;border-radius:50%;background:var(--orange-light);color:var(--orange);font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:2px solid rgba(224,92,37,.2)}
+.proc-title{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.proc-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.proc-time{font-size:12px;color:var(--orange);font-weight:600;margin-top:12px}
+
+/* ── TESTIMONIALS ── */
+.testi-wrap{background:var(--surface)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.testi-card{background:var(--white);border-radius:var(--rl);padding:32px;border:1.5px solid var(--border);transition:border-color .25s}
+.testi-card:hover{border-color:var(--border-h)}
+.testi-stars{font-size:15px;letter-spacing:3px;color:var(--orange);margin-bottom:18px}
+.testi-q{font-size:15px;color:var(--text);line-height:1.75;margin-bottom:24px;font-style:italic}
+.testi-foot{display:flex;align-items:center;gap:12px}
+.testi-av{width:42px;height:42px;border-radius:50%;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--orange);flex-shrink:0;border:2px solid rgba(224,92,37,.15)}
+.testi-name{font-size:14px;font-weight:700;line-height:1.3;color:var(--text)}
+.testi-role{font-size:12px;color:var(--muted)}
+
+/* ── CONTACT ── */
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.contact-text .sec-h{margin-bottom:16px}
+.contact-text p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.channels{display:flex;flex-direction:column;gap:14px}
+.channel{display:flex;align-items:center;gap:16px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);padding:20px 24px;transition:border-color .25s,transform .25s,box-shadow .25s}
+.channel:hover{border-color:var(--border-h);transform:translateX(4px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.channel-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ch-wa .channel-icon{background:#E8F8EE}
+.ch-tel .channel-icon{background:#EEF2FF}
+.ch-mail .channel-icon{background:var(--orange-light)}
+.channel-info{}
+.channel-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:4px}
+.channel-val{font-size:16px;font-weight:700;color:var(--text)}
+.channel-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.contact-form{background:var(--white);border-radius:var(--rxl);padding:40px;border:1.5px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,.06)}
+.form-title{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field label{font-size:13px;font-weight:600;color:var(--text)}
+.field input,.field textarea,.field select{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:12px 16px;font-size:15px;color:var(--text);font-family:var(--f);transition:border-color .2s;outline:none;width:100%}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--orange);background:var(--white)}
+.field textarea{min-height:100px;resize:vertical;line-height:1.6}
+.btn-send{width:100%;background:var(--orange);color:#fff;border:none;padding:15px 24px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--f);transition:background .2s,transform .15s}
+.btn-send:hover{background:var(--orange-dark);transform:scale(.98)}
+.form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+
+/* ── FOOTER ── */
+footer{background:var(--text);color:#E8E2DA;padding:40px 0}
+.foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot-logo{font-size:21px;font-weight:800;letter-spacing:-.02em}
+.foot-logo span{color:var(--orange)}
+.foot-links{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+.foot-links a{font-size:13px;color:#9A9290;transition:color .2s}
+.foot-links a:hover{color:#E8E2DA}
+.foot-copy{font-size:12px;color:#6B6460}
+
+/* ── FLOATING WA ── */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200}
+.wa-ball{width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s}
+.wa-ball:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.wa-ball svg{width:28px;height:28px;fill:#fff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .nav-links,.nav-wa{display:none}
+  .ham{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero-sub,.hero-ctas,.hero-trust{margin-left:auto;margin-right:auto;justify-content:center}
+  .wizard-card{padding:28px 20px}
+  .opts{grid-template-columns:1fr}
+  .opts.cols3{grid-template-columns:1fr}
+  .examples-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr;gap:0}
+  .proc-card{border-right:none;border-bottom:1.5px solid var(--border);padding:28px}
+  .proc-card:last-child{border-bottom:none}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+  .result-prices{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .foot-in{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:540px){
+  .hero h1{font-size:34px}
+  .hero-sub{font-size:15px}
+  .wiz-q{font-size:17px}
+}
+
+/* ── SERVICES ── */
+.svc-section{background:var(--bg)}
+.svc-tabs-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;background:var(--surface);border-radius:var(--rl);padding:8px;border:1.5px solid var(--border)}
+.svc-tab{flex:1;min-width:120px;padding:14px 16px;border-radius:var(--r);border:none;background:transparent;cursor:pointer;font-family:var(--f);font-size:13px;font-weight:700;color:var(--muted);transition:all .25s;text-align:center;line-height:1.3}
+.svc-tab .tab-emoji{display:block;font-size:22px;margin-bottom:5px}
+.svc-tab .tab-price{display:block;font-size:11px;font-weight:600;color:var(--muted2);margin-top:2px}
+.svc-tab.active{background:var(--white);color:var(--text);box-shadow:0 2px 12px rgba(0,0,0,.07);border:1.5px solid var(--border)}
+.svc-tab.active .tab-price{color:var(--orange)}
+.svc-panel{display:none;animation:fadeUp .4s ease}
+.svc-panel.active{display:grid;grid-template-columns:5fr 4fr;gap:20px;align-items:start}
+/* Left column */
+.svc-main-card{background:var(--white);border-radius:var(--rl);border:1.5px solid var(--border);overflow:hidden}
+.svc-hero-band{padding:32px 36px;background:linear-gradient(135deg,var(--orange-light) 0%,var(--white) 60%);border-bottom:1.5px solid var(--border)}
+.svc-hero-emoji{font-size:40px;margin-bottom:12px}
+.svc-hero-name{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.03em;margin-bottom:6px}
+.svc-hero-tag{font-size:14px;color:var(--muted);line-height:1.6;max-width:480px}
+.svc-hero-price-row{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.svc-price-big{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.04em;color:var(--text)}
+.svc-price-sub{font-size:13px;color:var(--muted)}
+.svc-time-badge{display:inline-flex;align-items:center;gap:6px;background:var(--orange-light);border:1.5px solid rgba(224,92,37,.2);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--orange-dark);font-weight:700}
+/* Tabs inside panel */
+.svc-inner-tabs{display:flex;gap:0;border-bottom:1.5px solid var(--border);padding:0 36px;overflow-x:auto}
+.svc-itab{padding:14px 18px;font-size:13px;font-weight:700;color:var(--muted);border:none;background:transparent;cursor:pointer;font-family:var(--f);border-bottom:2px solid transparent;margin-bottom:-1.5px;white-space:nowrap;transition:color .2s,border-color .2s}
+.svc-itab.on{color:var(--orange);border-color:var(--orange)}
+.svc-icontent{padding:28px 36px;min-height:260px}
+.svc-ipanel{display:none}
+.svc-ipanel.on{display:block;animation:fadeUp .35s ease}
+/* Includes list */
+.inc-list{display:flex;flex-direction:column;gap:10px}
+.inc-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text);line-height:1.5;padding:12px 14px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)}
+.inc-check{width:22px;height:22px;border-radius:50%;background:var(--orange-light);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.inc-info{}
+.inc-title{font-weight:700;font-size:13px}
+.inc-sub{font-size:12px;color:var(--muted);margin-top:2px}
+/* Specs */
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.spec-item{background:var(--bg);border-radius:var(--r);padding:14px 16px;border:1px solid var(--border)}
+.spec-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px}
+.spec-val{font-size:14px;font-weight:700;color:var(--text)}
+/* Benefits */
+.ben-list{display:flex;flex-direction:column;gap:14px}
+.ben-item{display:flex;gap:14px;align-items:flex-start}
+.ben-icon{width:40px;height:40px;border-radius:12px;background:var(--orange-light);border:1.5px solid rgba(224,92,37,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ben-text h4{font-size:14px;font-weight:700;margin-bottom:3px}
+.ben-text p{font-size:13px;color:var(--muted);line-height:1.55}
+/* FAQ inside service */
+.sfaq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.sfaq-item:last-child{border-bottom:none}
+.sfaq-q{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text);list-style:none;user-select:none}
+.sfaq-q::-webkit-details-marker{display:none}
+.sfaq-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:transform .3s,background .2s,border-color .2s;line-height:1}
+details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border-color:var(--orange);color:#fff}
+.sfaq-a{font-size:13px;color:var(--muted);line-height:1.7;padding:10px 0 4px}
+/* Video */
+.svc-video-wrap{position:relative;padding-bottom:56.25%;border-radius:var(--r);overflow:hidden;background:#000;border:1.5px solid var(--border)}
+.svc-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%}
+.svc-video-label{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+/* Right column */
+.svc-sidebar{display:flex;flex-direction:column;gap:16px}
+/* Reviews card */
+.rev-card{background:var(--white);border-radius:var(--rl);border:1.5px solid var(--border);padding:28px}
+.rev-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.rev-score{text-align:center}
+.rev-score-n{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--text)}
+.rev-score-stars{color:var(--orange);font-size:14px;letter-spacing:2px}
+.rev-score-count{font-size:11px;color:var(--muted);margin-top:4px}
+.rev-bars{flex:1}
+.rev-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.rev-bar-label{font-size:11px;color:var(--muted);width:12px;text-align:right;flex-shrink:0}
+.rev-bar-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.rev-bar-fill{height:100%;border-radius:3px;background:var(--orange);transition:width 1s ease}
+.rev-bar-pct{font-size:10px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+.rev-list{display:flex;flex-direction:column;gap:16px}
+.rev-item{padding-bottom:16px;border-bottom:1px solid var(--border)}
+.rev-item:last-child{border-bottom:none;padding-bottom:0}
+.rev-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rev-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+.rev-name{font-size:13px;font-weight:700;line-height:1.2}
+.rev-meta{font-size:11px;color:var(--muted)}
+.rev-stars{color:var(--orange);font-size:11px;letter-spacing:1px;margin-bottom:5px}
+.rev-text{font-size:13px;color:var(--muted);line-height:1.6;font-style:italic}
+.rev-helpful{font-size:11px;color:var(--muted2);margin-top:6px}
+/* CTA card */
+.svc-cta-card{background:linear-gradient(135deg,var(--orange) 0%,#c44e1c 100%);border-radius:var(--rl);padding:28px;color:#fff}
+.svc-cta-card h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.svc-cta-card p{font-size:13px;opacity:.85;line-height:1.6;margin-bottom:20px}
+.cta-wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--orange);padding:13px 20px;border-radius:100px;font-size:14px;font-weight:800;text-decoration:none;transition:opacity .2s,transform .15s;margin-bottom:10px}
+.cta-wa-btn:hover{opacity:.9;transform:scale(.97)}
+.cta-note{font-size:11px;opacity:.7;text-align:center}
+/* Guarantee card */
+.guar-card{background:var(--white);border-radius:var(--rl);border:1.5px solid var(--border);padding:24px}
+.guar-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.guar-row:last-child{margin-bottom:0}
+.guar-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.guar-text h4{font-size:13px;font-weight:700;margin-bottom:2px}
+.guar-text p{font-size:12px;color:var(--muted);line-height:1.5}
+/* Responsive services */
+@media(max-width:860px){
+  .svc-panel.active{grid-template-columns:1fr}
+  .svc-tabs-wrap{gap:6px}
+  .svc-tab{min-width:calc(50% - 6px);padding:12px 10px}
+  .svc-hero-band{padding:24px 20px}
+  .svc-inner-tabs{padding:0 20px}
+  .svc-icontent{padding:20px}
+  .spec-grid{grid-template-columns:1fr}
+  .rev-header{flex-direction:column;align-items:flex-start}
+}
+
+/* ── PORTFOLIO ── */
+.port-wrap{background:var(--bg)}
+.port-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:52px}
+.port-header-text{}
+.port-behance-link{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--border);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:700;color:var(--muted);transition:all .2s;white-space:nowrap;flex-shrink:0}
+.port-behance-link:hover{border-color:var(--border-h);color:var(--text);background:var(--surface)}
+/* Main 3 projects */
+.port-main{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.port-card{border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);background:var(--white);transition:border-color .3s,transform .35s,box-shadow .35s;cursor:default;display:flex;flex-direction:column}
+.port-card:hover{border-color:rgba(224,92,37,.3);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.09)}
+.port-card.featured{grid-column:span 2}
+.port-img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top;display:block;background:var(--surface)}
+.port-card.featured .port-img{aspect-ratio:16/7}
+.port-body{padding:28px 32px;flex:1;display:flex;flex-direction:column;gap:12px}
+.port-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.port-cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);font-family:var(--f)}
+.port-year{font-size:11px;color:var(--muted);border-left:1.5px solid var(--border);padding-left:10px}
+.port-client{font-size:11px;color:var(--muted);border-left:1.5px solid var(--border);padding-left:10px;font-weight:600}
+.port-title{font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.2;color:var(--text)}
+.port-desc{font-size:14px;color:var(--muted);line-height:1.7;flex:1}
+.port-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.ptag{font-size:11px;padding:4px 10px;border-radius:100px;border:1.5px solid var(--border);color:var(--muted);background:var(--bg)}
+.port-result{display:inline-flex;align-items:center;gap:8px;background:var(--orange-light);border:1.5px solid rgba(224,92,37,.2);border-radius:100px;padding:7px 14px;font-size:12px;color:var(--orange-dark);font-weight:600;margin-top:auto}
+/* Behance mini cards */
+.behance-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.beh-card{border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border);background:var(--white);transition:border-color .3s,transform .3s,box-shadow .3s;text-decoration:none;display:flex;flex-direction:column}
+.beh-card:hover{border-color:rgba(224,92,37,.3);transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.08)}
+.beh-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--surface);display:block}
+.beh-body{padding:16px 18px;flex:1}
+.beh-cat{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:5px}
+.beh-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:4px;letter-spacing:-.01em}
+.beh-sub{font-size:12px;color:var(--muted);line-height:1.4}
+.beh-footer{padding:12px 18px;border-top:1px solid var(--border);font-size:12px;font-weight:600;color:var(--orange);display:flex;align-items:center;gap:5px}
+@media(max-width:860px){
+  .port-main{grid-template-columns:1fr}
+  .port-card.featured{grid-column:span 1}
+  .port-card.featured .port-img{aspect-ratio:16/8}
+  .behance-strip{grid-template-columns:1fr}
+  .port-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-in">
+      <div class="logo">Haza<span>.<sub>Webs y Apps</sub></div>
+      <ul class="nav-links">
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20quiero%20hablar%20sobre%20mi%20negocio" target="_blank" rel="noopener" class="nav-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escríbeme
+      </a>
+      <button class="ham" id="ham" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob" id="mob">
+  <button class="mob-close" id="mobClose" aria-label="Cerrar">✕</button>
+  <a href="#como-funciona" onclick="closeMob()">Cómo funciona</a>
+  <a href="#servicios" onclick="closeMob()">Servicios</a>
+  <a href="#portafolio" onclick="closeMob()">Nuestro trabajo</a>
+  <a href="#contacto" onclick="closeMob()">Contacto</a>
+  <a href="https://wa.me/5215612934010" target="_blank" class="wa-mob" onclick="closeMob()">WhatsApp ↗</a>
+</div>
+
+<!-- HERO + WIZARD -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-badge reveal">Cotizador Digital Express · 2026</div>
+        <h1 class="reveal d1">La <em>solución ideal</em> para tu negocio.</h1>
+        <p class="hero-sub reveal d2"><b>Responde 3 preguntas y te digo qué necesitas, cuánto cuesta y cuándo lo tendrías listo.</b></p>
+        <div class="hero-ctas reveal d3">
+          <a href="#servicios" class="btn-primary">Ver servicios ↓</a>
+          <a href="#contacto" class="btn-ghost">Prefiero hablar primero</a>
+        </div>
+        <div class="hero-trust reveal d3">
+          <div class="trust-item">+10 años de experiencia</div>
+          <div class="trust-item">Entregas de 2 a 12 semanas</div>
+          <div class="trust-item">Precio fijo, sin sorpresas</div>
+          <div class="trust-item">Profesionalismo y Confianza</div>
+        </div>
+      </div>
+
+      <!-- Right: Wizard -->
+      <div class="wizard-card reveal d2" id="wizardCard">
+        <!-- Progress -->
+        <div class="wiz-progress" id="progress">
+          <div class="wiz-dot active" id="dot1"></div>
+          <div class="wiz-dot" id="dot2"></div>
+          <div class="wiz-dot" id="dot3"></div>
+          <span class="wiz-step-label" id="stepLabel">Paso 1 de 3</span>
+        </div>
+
+        <!-- STEP 1: Tipo de negocio -->
+        <div class="wiz-section show" id="step1">
+          <div class="wiz-q">Primero, ¿a qué se dedica tu negocio?</div>
+          <div class="wiz-sub">Elige la opción que mejor te describe</div>
+          <div class="opts cols3">
+            <div class="opt" onclick="pick(this,'negocio','salud')">
+              <span class="opt-emoji">🏥</span>
+              <div class="opt-info"><div class="opt-title">Salud y bienestar</div><div class="opt-sub">Médico, dentista, psicólogo, nutriólogo...</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'negocio','profesional')">
+              <span class="opt-emoji">⚖️</span>
+              <div class="opt-info"><div class="opt-title">Servicios profesionales</div><div class="opt-sub">Abogado, contador, arquitecto...</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'negocio','productos')">
+              <span class="opt-emoji">🛍️</span>
+              <div class="opt-info"><div class="opt-title">Vendo productos</div><div class="opt-sub">Ropa, artesanías, cosméticos...</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'negocio','comida')">
+              <span class="opt-emoji">🍽️</span>
+              <div class="opt-info"><div class="opt-title">Restaurante o comida</div><div class="opt-sub">Cocina, catering, dark kitchen...</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'negocio','belleza')">
+              <span class="opt-emoji">💆</span>
+              <div class="opt-info"><div class="opt-title">Belleza y wellness</div><div class="opt-sub">Salón, spa, gym, yoga, pilates...</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'negocio','otro')">
+              <span class="opt-emoji">🏢</span>
+              <div class="opt-info"><div class="opt-title">Otro negocio</div><div class="opt-sub">Me cuentas y te ayudo</div></div>
+            </div>
+          </div>
+          <div class="wiz-nav">
+            <div></div>
+            <button class="btn-next" id="next1" onclick="goStep(2)" disabled>Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Objetivo -->
+        <div class="wiz-section" id="step2">
+          <div class="wiz-q">¿Qué quieres lograr principalmente?</div>
+          <div class="wiz-sub">Elige el objetivo más importante ahora mismo</div>
+          <div class="opts">
+            <div class="opt" onclick="pick(this,'objetivo','encontrar')">
+              <span class="opt-emoji">🔍</span>
+              <div class="opt-info"><div class="opt-title">Que me encuentren en Google</div><div class="opt-sub">Y vean que soy un profesional serio y de confianza</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'objetivo','citas')">
+              <span class="opt-emoji">📅</span>
+              <div class="opt-info"><div class="opt-title">Recibir citas o reservas online</div><div class="opt-sub">Que mis clientes agenden solos sin llamar</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'objetivo','vender')">
+              <span class="opt-emoji">🛒</span>
+              <div class="opt-info"><div class="opt-title">Vender en internet</div><div class="opt-sub">Sin depender de Mercado Libre ni Instagram</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'objetivo','organizar')">
+              <span class="opt-emoji">📊</span>
+              <div class="opt-info"><div class="opt-title">Organizar mejor mi negocio</div><div class="opt-sub">Clientes, pagos, inventario, agenda interna...</div></div>
+            </div>
+          </div>
+          <div class="wiz-nav">
+            <button class="btn-back" id="next1" onclick="goStep(1)">← Regresar</button>
+            <button class="btn-next" id="next2" onclick="goStep(3)" disabled>Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Urgencia -->
+        <div class="wiz-section" id="step3">
+          <div class="wiz-q">Un último dato — ¿para cuándo lo necesitas?</div>
+          <div class="wiz-sub">Esto me ayuda a darte una fecha de entrega real</div>
+          <div class="opts">
+            <div class="opt" onclick="pick(this,'urgencia','rapido')">
+              <span class="opt-emoji">⚡</span>
+              <div class="opt-info"><div class="opt-title">Lo antes posible</div><div class="opt-sub">Me gustaria tener algo en mis manos este mes.</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'urgencia','mes')">
+              <span class="opt-emoji">📅</span>
+              <div class="opt-info"><div class="opt-title">Tengo una fecha definida</div><div class="opt-sub">Y estoy con tiempo para planearlo bien.</div></div>
+            </div>
+            <div class="opt" onclick="pick(this,'urgencia','despues')">
+              <span class="opt-emoji">🗓️</span>
+              <div class="opt-info"><div class="opt-title">Lo estoy planeando</div><div class="opt-sub">Quiero conocer opciones y precios primero.</div></div>
+            </div>
+          </div>
+          <div class="wiz-nav">
+            <button class="btn-back" id="next2" onclick="goStep(2)">← Regresar</button>
+            <button class="btn-next" id="next3" onclick="showResult()" disabled>Ver mi solución ✨</button>
+          </div>
+        </div>
+
+        <!-- RESULT -->
+        <div id="result-section">
+          <div class="result-top">
+            <div class="result-icon" id="resultIcon"></div>
+            <div>
+              <div class="result-label">Tu solución personalizada</div>
+              <div class="result-name" id="resultName"></div>
+              <div class="result-tag" id="resultTag"></div>
+            </div>
+          </div>
+          <div class="result-note" id="resultNote"></div>
+          <div class="result-benefits" id="resultBenefits"></div>
+          <div class="result-prices">
+            <div class="rp">
+              <div class="rp-label">Inversión total</div>
+              <div class="rp-val" id="resultPrice"></div>
+              <div class="rp-sub">Pago único · 50% al iniciar</div>
+            </div>
+            <div class="rp">
+              <div class="rp-label">Lista en</div>
+              <div class="rp-val" id="resultTime" style="font-size:clamp(16px,2vw,20px)"></div>
+              <div class="rp-sub" id="resultTimeSub"></div>
+            </div>
+          </div>
+          <div class="result-ctas">
+            <a id="resultWA" href="#" target="_blank" rel="noopener" class="btn-wa">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Hablar por WhatsApp ahora
+            </a>
+            <button class="btn-restart" onclick="restartWiz()">← Empezar de nuevo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="como-funciona">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <span class="sec-label">Así funciona</span>
+      <h2 class="sec-h">De cero a funcionando<br>en 3 pasos sencillos.</h2>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-card reveal">
+        <div class="proc-num">1</div>
+        <div class="proc-title">Me cuentas sobre tu negocio</div>
+        <div class="proc-desc">Hablamos por WhatsApp, por videollamada o en una reunión. Me dices qué necesitas, qué quieres lograr y cuándo. Sin tecnicismos, en tu idioma.</div>
+        <div class="proc-time">⏱ 20 minutos y ya tienes una propuesta</div>
+      </div>
+      <div class="proc-card reveal d1">
+        <div class="proc-num">2</div>
+        <div class="proc-title">Te mando una propuesta exacta</div>
+        <div class="proc-desc">En menos de 24 horas la tienes en tu WhatsApp o Correo electrónico:
+        <br>- Qué incluye tu solución,
+        <br>- El precio exacto sin rangos vagos,
+        <br>- La fecha en que estaría lista y
+        <br>- Las condiciones de pago.</div>
+        <div class="proc-time">⏱ Respuesta en menos de 24 horas</div>
+      </div>
+      <div class="proc-card reveal d2">
+        <div class="proc-num">3</div>
+        <div class="proc-title">Yo me encargo de todo</div>
+        <div class="proc-desc">Coordinamos el contenido.
+        <br>Diseño, desarrollo y publico tu solución.
+        <br>Al final tienes algo que funciona de verdad en tus manos.</div>
+        <div class="proc-time">⏱ 7 a 28 días según tu proyecto</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <a href="#contacto" class="btn-primary" style="display:inline-flex">Empezar ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="svc-section" id="servicios">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="sec-label">Servicios</span>
+      <h2 class="sec-h">Encuentra tu herramienta ideal.</h2>
+      <p class="sec-p">Selecciona el servicio que te interesa y explora cada detalle: Qué incluye, qué obtienes y qué opinan quienes ya lo tienen.</p>
+    </div>
+
+    <!-- SERVICE TABS -->
+    <div class="svc-tabs-wrap reveal">
+      <button class="svc-tab active" onclick="svcTab(0)" id="stab0">
+        <span class="tab-emoji">🌐</span>
+        Sitio Web Informativo/Contacto
+        <span class="tab-price">$12,500 MXN</span>
+      </button>
+      <button class="svc-tab" onclick="svcTab(1)" id="stab1">
+        <span class="tab-emoji">⚙️</span>
+        Sitio Web con Sistema
+        <span class="tab-price">$22,000 MXN</span>
+      </button>
+      <button class="svc-tab" onclick="svcTab(2)" id="stab2">
+        <span class="tab-emoji">🛒</span>
+        Tienda en Línea
+        <span class="tab-price">$34,000 MXN</span>
+      </button>
+      <button class="svc-tab" onclick="svcTab(3)" id="stab3">
+        <span class="tab-emoji">📱</span>
+        App o Sistema Administrativo
+        <span class="tab-price">Desde $60,000 MXN</span>
+      </button>
+    </div>
+
+    <!-- ═══ PANEL 0: PRESENCIA PROFESIONAL ═══ -->
+    <div class="svc-panel active" id="spanel0">
+      <!-- LEFT -->
+      <div class="svc-main-card reveal">
+        <div class="svc-hero-band">
+          <div class="svc-hero-emoji">🌐</div>
+          <div class="svc-hero-name">Presencia Profesional</div>
+          <div class="svc-hero-tag">Tu negocio en internet con diseño profesional, optimizado para Google y listo para convertir visitas en clientes desde el primer día.</div>
+          <div class="svc-hero-price-row">
+            <div class="svc-price-big">$12,500</div>
+            <div class="svc-price-sub">MXN · pago único<br>50% al iniciar · 50% al entregar</div>
+            <div class="svc-time-badge">⏱ Listo en 7–10 días</div>
+          </div>
+        </div>
+        <!-- Inner tabs -->
+        <div class="svc-inner-tabs">
+          <button class="svc-itab on" onclick="svcInner(this,'p0')">Qué incluye</button>
+          <button class="svc-itab" onclick="svcInner(this,'p1')">Especificaciones</button>
+          <button class="svc-itab" onclick="svcInner(this,'p2')">Beneficios</button>
+          <button class="svc-itab" onclick="svcInner(this,'p3')">Preguntas</button>
+          <button class="svc-itab" onclick="svcInner(this,'p4')">Demo</button>
+        </div>
+        <div class="svc-icontent">
+          <div class="svc-ipanel on" id="p0">
+            <div class="inc-list">
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Diseño personalizado desde cero</div><div class="inc-sub">Sin plantillas. Diseñado específicamente para tu negocio, tu estilo y tus clientes.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Hasta 6 secciones optimizadas para conversión</div><div class="inc-sub">Hero, servicios, sobre ti, resultados, testimonios y contacto — cada sección tiene un propósito claro.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Dominio + hosting incluido el primer año</div><div class="inc-sub">Tu dirección web propia (ej. tunegocio.com.mx) y servidor rápido sin costo adicional.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">SEO técnico desde la base</div><div class="inc-sub">Estructura correcta para que Google te encuentre: metaetiquetas, velocidad optimizada, sitemap y Search Console configurado.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Botón de WhatsApp y formulario de contacto</div><div class="inc-sub">Tus clientes te contactan con un clic. Tú recibes una notificación al instante.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">100% mobile-first · Carga ultrarrápida</div><div class="inc-sub">El 89% de tus clientes navega en celular. Tu sitio se ve perfecto en cualquier pantalla.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Google Analytics configurado</div><div class="inc-sub">Sabes cuántas personas visitan tu sitio, de dónde vienen y qué hacen en él.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">2 rondas de revisiones incluidas</div><div class="inc-sub">Revisas el diseño antes de publicar. Si algo no te convence, lo ajustamos.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">30 días de soporte post-entrega</div><div class="inc-sub">Si algo falla o tienes dudas después de publicar, estoy disponible sin costo adicional.</div></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="p1">
+            <div class="spec-grid">
+              <div class="spec-item"><div class="spec-label">Tiempo de entrega</div><div class="spec-val">7 – 10 días hábiles</div></div>
+              <div class="spec-item"><div class="spec-label">Número de páginas</div><div class="spec-val">1 página · hasta 6 secciones</div></div>
+              <div class="spec-item"><div class="spec-label">Dominio incluido</div><div class="spec-val">✓ Primer año gratis</div></div>
+              <div class="spec-item"><div class="spec-label">Hosting</div><div class="spec-val">✓ Primer año gratis</div></div>
+              <div class="spec-item"><div class="spec-label">Certificado SSL</div><div class="spec-val">✓ HTTPS siempre activo</div></div>
+              <div class="spec-item"><div class="spec-label">Optimización móvil</div><div class="spec-val">✓ Mobile-first 100%</div></div>
+              <div class="spec-item"><div class="spec-label">SEO técnico</div><div class="spec-val">✓ Básico incluido</div></div>
+              <div class="spec-item"><div class="spec-label">Analytics</div><div class="spec-val">✓ Google Analytics 4</div></div>
+              <div class="spec-item"><div class="spec-label">WhatsApp integrado</div><div class="spec-val">✓ Botón flotante</div></div>
+              <div class="spec-item"><div class="spec-label">Formulario de contacto</div><div class="spec-val">✓ Con notificaciones</div></div>
+              <div class="spec-item"><div class="spec-label">Panel de edición</div><div class="spec-val">✓ Sin necesitar programar</div></div>
+              <div class="spec-item"><div class="spec-label">Revisiones</div><div class="spec-val">2 rondas incluidas</div></div>
+              <div class="spec-item"><div class="spec-label">Soporte post-entrega</div><div class="spec-val">30 días sin costo</div></div>
+              <div class="spec-item"><div class="spec-label">Condiciones de pago</div><div class="spec-val">50% inicio · 50% entrega</div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="p2">
+            <div class="ben-list">
+              <div class="ben-item"><div class="ben-icon">🔍</div><div class="ben-text"><h4>Tus clientes te encuentran cuando más te necesitan</h4><p>El 85% de las personas busca en Google antes de contratar. Si no apareces, no existes para ellos.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🤝</div><div class="ben-text"><h4>Primera impresión que genera confianza inmediata</h4><p>Un sitio profesional te posiciona por encima de la competencia antes de que el cliente te hable.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">⏰</div><div class="ben-text"><h4>Tu vendedor que trabaja las 24 horas sin descansar</h4><p>A las 2am, en fin de semana, en días festivos — tu sitio sigue presentando tus servicios y captando clientes.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📊</div><div class="ben-text"><h4>Sabes exactamente qué funciona y qué no</h4><p>Con Google Analytics ves cuántas personas visitan tu sitio, cuánto tiempo se quedan y desde dónde llegan.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📱</div><div class="ben-text"><h4>Se ve perfecto en el celular de tu cliente</h4><p>Diseñado primero para móvil — donde llega el 89% del tráfico en México.</p></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="p3">
+            <details class="sfaq-item"><summary class="sfaq-q">¿Puedo actualizar el contenido yo mismo después? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. El sitio se entrega con un sistema de administración sencillo para cambiar textos e imágenes sin saber programar. Si prefieres que yo me encargue, el Plan Esencial de mantenimiento cubre hasta 3 cambios al mes por $1,500.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Qué necesito tener listo para empezar? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Tu logo, una descripción de tus servicios y algunas fotos (pueden ser del celular). Si no tienes logo, puedo orientarte. Si no tienes fotos profesionales, uso imágenes de stock de alta calidad mientras las consigues.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Cómo sé que mi sitio va a aparecer en Google? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">El sitio se construye con SEO técnico correcto desde el inicio: estructura de encabezados, velocidad de carga optimizada, metaetiquetas, sitemap y configuración en Google Search Console. Posicionarte en primeros resultados toma semanas, pero el sitio sale 100% preparado para ello.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Qué pasa si el diseño no me convence? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Antes de escribir código, te presento el diseño completo para tu aprobación. Si algo no encaja, lo ajustamos. Las 2 rondas de revisiones están incluidas en el precio.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Cuánto cuesta el dominio y hosting después del primer año? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">El primer año está incluido. A partir del segundo año, el dominio cuesta aprox. $350 MXN/año y el hosting aprox. $1,200 MXN/año — o puedes contratar cualquiera de los planes de mantenimiento que incluyen todo eso.</div></details>
+          </div>
+          <div class="svc-ipanel" id="p4">
+            <div class="svc-video-wrap">
+              <iframe src="https://www.youtube.com/embed/2YfSvnDnBhg?rel=0&modestbranding=1" title="Ejemplo de proyecto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="svc-video-label">📽️ Sitio web para reserva de eventos.</div>
+            <div style="margin-top:16px;padding:16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
+              <div style="font-size:13px;color:var(--text);font-weight:700;margin-bottom:6px">Lo que ves en el video:</div>
+              <div style="font-size:13px;color:var(--muted);line-height:1.7">Check-in de socios, control de membresías, gestión de inventario y reportes en tiempo real — todo desde una interfaz que cualquier persona puede usar sin capacitación.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT SIDEBAR -->
+      <div class="svc-sidebar">
+        <!-- Reviews -->
+        <div class="rev-card reveal d1">
+          <div class="rev-header">
+            <div class="rev-score">
+              <div class="rev-score-n">4.9</div>
+              <div class="rev-score-stars">★★★★★</div>
+              <div class="rev-score-count">23 reseñas</div>
+            </div>
+            <div class="rev-bars">
+              <div class="rev-bar-row"><span class="rev-bar-label">5</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:91%"></div></div><span class="rev-bar-pct">91%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">4</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:7%"></div></div><span class="rev-bar-pct">7%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">3</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:2%"></div></div><span class="rev-bar-pct">2%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">2</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">1</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+            </div>
+          </div>
+          <div class="rev-list">
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#FEF2EB;color:#E05C25">CR</div><div><div class="rev-name">Carlos Rodríguez</div><div class="rev-meta">Dentista · Naucalpan · hace 2 meses</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"Antes nadie me encontraba en Google. Ahora recibo 4-5 llamadas nuevas a la semana directamente del sitio. Lo que invertí lo recuperé en el primer mes."</div>
+              <div class="rev-helpful">👍 18 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#EFF6FF;color:#2563EB">AM</div><div><div class="rev-name">Alejandra Morales</div><div class="rev-meta">Psicóloga · CDMX · hace 3 meses</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"El proceso fue facilísimo. Me pidió información mínima y el resultado fue espectacular. Mis pacientes me dicen que el sitio les generó mucha confianza antes de llamarme."</div>
+              <div class="rev-helpful">👍 12 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#F0FDF4;color:#16A34A">LV</div><div><div class="rev-name">Luis Vargas</div><div class="rev-meta">Contador · Ecatepec · hace 1 mes</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"Rápido, profesional y sin complicaciones. En 8 días tenía mi sitio publicado y funcionando perfectamente. Vale cada peso."</div>
+              <div class="rev-helpful">👍 9 personas encontraron esto útil</div>
+            </div>
+          </div>
+        </div>
+        <!-- CTA -->
+        <div class="svc-cta-card reveal d2">
+          <h3>¿Este servicio es para ti?</h3>
+          <p>Escríbeme y en 24 horas tienes una propuesta con precio exacto, alcance definido y fecha de entrega.</p>
+          <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20me%20interesa%20el%20servicio%20de%20Presencia%20Profesional%20(%2412%2C000).%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener" class="cta-wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero este servicio
+          </a>
+          <div class="cta-note">Sin compromiso · Respuesta en menos de 2 horas</div>
+        </div>
+        <!-- Guarantee -->
+        <div class="guar-card reveal d3">
+          <div class="guar-row"><div class="guar-icon">🔒</div><div class="guar-text"><h4>Precio fijo garantizado</h4><p>El precio acordado no cambia aunque el proyecto crezca en alcance menor.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">✏️</div><div class="guar-text"><h4>Revisiones incluidas</h4><p>2 rondas de cambios sin costo. Tu aprobación antes de publicar.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">📅</div><div class="guar-text"><h4>Fecha de entrega real</h4><p>Te digo exactamente cuándo estará listo — y lo cumplo.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">💬</div><div class="guar-text"><h4>Comunicación directa</h4><p>Hablas conmigo, no con un asistente. Siempre.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PANEL 1: SITIO CON SISTEMA ═══ -->
+    <div class="svc-panel" id="spanel1">
+      <div class="svc-main-card reveal">
+        <div class="svc-hero-band">
+          <div class="svc-hero-emoji">⚙️</div>
+          <div class="svc-hero-name">Sitio con Sistema</div>
+          <div class="svc-hero-tag">Tu sitio web más una funcionalidad específica para tu negocio: citas online, catálogo interactivo, formularios avanzados o galería dinámica. El cliente elige qué necesita.</div>
+          <div class="svc-hero-price-row">
+            <div class="svc-price-big">$22,000</div>
+            <div class="svc-price-sub">MXN · pago único<br>50% al iniciar · 50% al entregar</div>
+            <div class="svc-time-badge">⏱ Listo en 12–18 días</div>
+          </div>
+        </div>
+        <div class="svc-inner-tabs">
+          <button class="svc-itab on" onclick="svcInner(this,'q0')">Qué incluye</button>
+          <button class="svc-itab" onclick="svcInner(this,'q1')">Especificaciones</button>
+          <button class="svc-itab" onclick="svcInner(this,'q2')">Beneficios</button>
+          <button class="svc-itab" onclick="svcInner(this,'q3')">Preguntas</button>
+          <button class="svc-itab" onclick="svcInner(this,'q4')">Ejemplo real</button>
+        </div>
+        <div class="svc-icontent">
+          <div class="svc-ipanel on" id="q0">
+            <div class="inc-list">
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Todo lo del plan Presencia Profesional</div><div class="inc-sub">Diseño personalizado, SEO, dominio, hosting, Analytics, WhatsApp, formulario y 3 rondas de revisiones.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Sistema de citas o reservas online</div><div class="inc-sub">Tus clientes agendan solos con calendario en tiempo real. Tú recibes notificación automática y confirmación al cliente.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Catálogo interactivo de servicios o productos</div><div class="inc-sub">Galería dinámica, filtros, descripciones detalladas y precios opcionales.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Integración con Google Calendar</div><div class="inc-sub">Las citas aparecen directamente en tu calendario de Google sin que hagas nada.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Formularios avanzados con lógica condicional</div><div class="inc-sub">Formularios que se adaptan según las respuestas del usuario y envían notificaciones al instante.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Panel de administración propio</div><div class="inc-sub">Gestiona citas, mensajes y contenido desde un panel sencillo — sin tocar código.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Hasta 8 secciones completas</div><div class="inc-sub">Más espacio para mostrar todo lo que ofreces: servicios, equipo, proceso, galería, precios y contacto.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">30 días de soporte post-entrega</div><div class="inc-sub">Dudas, ajustes menores y asistencia técnica sin costo durante el primer mes.</div></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="q1">
+            <div class="spec-grid">
+              <div class="spec-item"><div class="spec-label">Tiempo de entrega</div><div class="spec-val">12 – 18 días hábiles</div></div>
+              <div class="spec-item"><div class="spec-label">Páginas / Secciones</div><div class="spec-val">Hasta 8 secciones</div></div>
+              <div class="spec-item"><div class="spec-label">Sistema de citas</div><div class="spec-val">✓ Con confirmación automática</div></div>
+              <div class="spec-item"><div class="spec-label">Google Calendar</div><div class="spec-val">✓ Integrado</div></div>
+              <div class="spec-item"><div class="spec-label">Panel de administración</div><div class="spec-val">✓ Sin programar</div></div>
+              <div class="spec-item"><div class="spec-label">Catálogo de servicios</div><div class="spec-val">✓ Con filtros y galería</div></div>
+              <div class="spec-item"><div class="spec-label">Formularios avanzados</div><div class="spec-val">✓ Con lógica condicional</div></div>
+              <div class="spec-item"><div class="spec-label">Notificaciones automáticas</div><div class="spec-val">✓ Email + WhatsApp</div></div>
+              <div class="spec-item"><div class="spec-label">Dominio + Hosting</div><div class="spec-val">✓ Primer año incluido</div></div>
+              <div class="spec-item"><div class="spec-label">SEO técnico</div><div class="spec-val">✓ Avanzado</div></div>
+              <div class="spec-item"><div class="spec-label">Revisiones</div><div class="spec-val">3 rondas incluidas</div></div>
+              <div class="spec-item"><div class="spec-label">Soporte post-entrega</div><div class="spec-val">30 días sin costo</div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="q2">
+            <div class="ben-list">
+              <div class="ben-item"><div class="ben-icon">📅</div><div class="ben-text"><h4>Tus clientes agendan solos a cualquier hora</h4><p>A las 11pm, en sábado, en feriado — tu agenda se llena sin que tú hagas nada. Sin WhatsApp de ida y vuelta.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🔔</div><div class="ben-text"><h4>Cero citas perdidas u olvidadas</h4><p>El sistema envía recordatorios automáticos al cliente y a ti. Nadie falta sin avisarte.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📋</div><div class="ben-text"><h4>Tus servicios explicados al detalle antes de que llamen</h4><p>El catálogo interactivo resuelve dudas antes de que el cliente siquiera te contacte. Llegan más decididos.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">⚡</div><div class="ben-text"><h4>Ahorras horas de coordinación cada semana</h4><p>Lo que antes tomaba 2 horas de mensajes de WhatsApp ahora pasa solo — automáticamente.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📊</div><div class="ben-text"><h4>Control total desde tu celular</h4><p>Ves tus citas, mensajes y estadísticas desde el panel de administración, en cualquier lugar.</p></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="q3">
+            <details class="sfaq-item"><summary class="sfaq-q">¿Puedo elegir qué sistema quiero — citas, catálogo o formulario? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. En la llamada inicial me cuentas qué funcionalidad necesitas más. Si tu negocio son citas, hacemos citas. Si necesitas catálogo, hacemos catálogo. El precio es el mismo.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Qué tan difícil es administrar las citas desde el panel? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Muy fácil. El panel es visual, en español y no requiere ningún conocimiento técnico. Puedes ver, editar o cancelar citas desde tu celular en menos de 30 segundos.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Las citas se sincronizan con mi Google Calendar automáticamente? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. Cada vez que un cliente agenda, la cita aparece en tu Google Calendar sin que hagas nada. También puedes bloquear días o cambiar tu disponibilidad directamente desde el calendario.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Mis clientes reciben confirmación automática? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. En el momento en que agendan reciben un correo de confirmación con todos los datos de la cita. Y un día antes reciben un recordatorio automático para reducir las ausencias.</div></details>
+          </div>
+          <div class="svc-ipanel" id="q4">
+            <div class="svc-video-wrap">
+              <iframe src="https://www.youtube.com/embed/lCUwHwH3yKU?rel=0&modestbranding=1" title="Ejemplo Abarrotera POS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="svc-video-label">📽️ Punto de venta y app para distribuidora — proyecto real Llevelín</div>
+            <div style="margin-top:16px;padding:16px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border)">
+              <div style="font-size:13px;color:var(--text);font-weight:700;margin-bottom:6px">Qué resolvimos:</div>
+              <div style="font-size:13px;color:var(--muted);line-height:1.7">La distribuidora tomaba pedidos por WhatsApp y los anotaba en papel. Ahora tiene un sistema de pedidos online para clientes y un POS interno para el equipo — sobre el mismo backend, en tiempo real.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-sidebar">
+        <div class="rev-card reveal d1">
+          <div class="rev-header">
+            <div class="rev-score"><div class="rev-score-n">5.0</div><div class="rev-score-stars">★★★★★</div><div class="rev-score-count">17 reseñas</div></div>
+            <div class="rev-bars">
+              <div class="rev-bar-row"><span class="rev-bar-label">5</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:100%"></div></div><span class="rev-bar-pct">100%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">4</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">3</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">2</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">1</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+            </div>
+          </div>
+          <div class="rev-list">
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#FEF2EB;color:#E05C25">SG</div><div><div class="rev-name">Sandra Gutiérrez</div><div class="rev-meta">Spa · Tlalnepantla · hace 5 semanas</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"El sistema de citas cambió mi negocio por completo. Antes perdía 2 horas al día contestando WhatsApp. Ahora mis clientes agendan solos y yo solo confirmo. Increíble."</div>
+              <div class="rev-helpful">👍 22 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#EFF6FF;color:#2563EB">RP</div><div><div class="rev-name">Roberto Pérez</div><div class="rev-meta">Dentista · Neza · hace 2 meses</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"Mis pacientes agendan solos a las 11 de la noche y yo lo veo en mi calendario al despertar. Ya no dependo de la recepcionista para eso. Vale doble lo que cuesta."</div>
+              <div class="rev-helpful">👍 16 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#F5F3FF;color:#7C3AED">NF</div><div><div class="rev-name">Natalia Flores</div><div class="rev-meta">Nutrióloga · CDMX · hace 3 semanas</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"El catálogo de mis planes de nutrición con el sistema de citas es exactamente lo que necesitaba. Mis clientes llegan a la primera consulta ya sabiendo qué quieren. Perfecto."</div>
+              <div class="rev-helpful">👍 11 personas encontraron esto útil</div>
+            </div>
+          </div>
+        </div>
+        <div class="svc-cta-card reveal d2">
+          <h3>¿Este servicio es para ti?</h3>
+          <p>Cuéntame sobre tu negocio y en 24 horas tienes una propuesta con todo detallado.</p>
+          <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20me%20interesa%20el%20Sitio%20con%20Sistema%20(%2420%2C000).%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener" class="cta-wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero este servicio
+          </a>
+          <div class="cta-note">Sin compromiso · Respuesta en menos de 2 horas</div>
+        </div>
+        <div class="guar-card reveal d3">
+          <div class="guar-row"><div class="guar-icon">🔒</div><div class="guar-text"><h4>Precio fijo garantizado</h4><p>Sin costos ocultos ni sorpresas al final del proyecto.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">🗓️</div><div class="guar-text"><h4>Fecha de entrega comprometida</h4><p>Te digo el día exacto en que estará listo y lo cumplo.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">💬</div><div class="guar-text"><h4>Trato directo, sin intermediarios</h4><p>Hablas conmigo en todo momento — no con un asistente.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PANEL 2: TIENDA EN LÍNEA ═══ -->
+    <div class="svc-panel" id="spanel2">
+      <div class="svc-main-card reveal">
+        <div class="svc-hero-band">
+          <div class="svc-hero-emoji">🛒</div>
+          <div class="svc-hero-name">Tienda en Línea</div>
+          <div class="svc-hero-tag">Tu propia tienda online con pagos reales, catálogo completo y panel de administración — sin depender de Mercado Libre ni Instagram. Sin comisiones a nadie.</div>
+          <div class="svc-hero-price-row">
+            <div class="svc-price-big">$34,000</div>
+            <div class="svc-price-sub">MXN · pago único<br>50% al iniciar · 50% al entregar</div>
+            <div class="svc-time-badge">⏱ Lista en 20–28 días</div>
+          </div>
+        </div>
+        <div class="svc-inner-tabs">
+          <button class="svc-itab on" onclick="svcInner(this,'e0')">Qué incluye</button>
+          <button class="svc-itab" onclick="svcInner(this,'e1')">Especificaciones</button>
+          <button class="svc-itab" onclick="svcInner(this,'e2')">Beneficios</button>
+          <button class="svc-itab" onclick="svcInner(this,'e3')">Preguntas</button>
+          <button class="svc-itab" onclick="svcInner(this,'e4')">¿Para quién es?</button>
+        </div>
+        <div class="svc-icontent">
+          <div class="svc-ipanel on" id="e0">
+            <div class="inc-list">
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Diseño de tienda completamente personalizado</div><div class="inc-sub">No parece un template genérico. Tu tienda tiene la identidad de tu marca en cada detalle.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Carrito de compras y checkout optimizado</div><div class="inc-sub">Proceso de compra fluido que minimiza carritos abandonados y maximiza conversión.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">MercadoPago + Stripe integrados</div><div class="inc-sub">Acepta tarjetas, OXXO, transferencias y cualquier método de pago en México.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Panel de administración propio (Supabase)</div><div class="inc-sub">Gestiona productos, pedidos, clientes e inventario desde tu celular — todo en tiempo real.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Gestión de inventario y pedidos</div><div class="inc-sub">El stock se actualiza automáticamente con cada venta. Alertas cuando un producto está por agotarse.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Hasta 50 productos iniciales cargados</div><div class="inc-sub">Te ahorro el trabajo de subir el catálogo inicial. Solo me mandas la información y yo lo cargo.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Configuración de envíos y zonas</div><div class="inc-sub">Precios de envío por zona, envío gratis a partir de cierto monto, y rastreo de pedidos.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">Notificaciones automáticas al comprador</div><div class="inc-sub">Confirmación de compra, actualización de envío y entrega — todo automático.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">SEO de productos optimizado</div><div class="inc-sub">Cada producto optimizado para aparecer en búsquedas de Google Shopping y búsqueda orgánica.</div></div></div>
+              <div class="inc-item"><div class="inc-check">✓</div><div class="inc-info"><div class="inc-title">3 rondas de revisiones + 30 días de soporte</div><div class="inc-sub">Apruebas el diseño antes de publicar y tienes un mes de soporte gratuito post-entrega.</div></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="e1">
+            <div class="spec-grid">
+              <div class="spec-item"><div class="spec-label">Tiempo de entrega</div><div class="spec-val">20 – 28 días hábiles</div></div>
+              <div class="spec-item"><div class="spec-label">Productos iniciales</div><div class="spec-val">Hasta 50 incluidos</div></div>
+              <div class="spec-item"><div class="spec-label">MercadoPago</div><div class="spec-val">✓ Integrado</div></div>
+              <div class="spec-item"><div class="spec-label">Stripe</div><div class="spec-val">✓ Integrado</div></div>
+              <div class="spec-item"><div class="spec-label">OXXO / Transferencia</div><div class="spec-val">✓ Incluido</div></div>
+              <div class="spec-item"><div class="spec-label">Gestión de inventario</div><div class="spec-val">✓ Tiempo real</div></div>
+              <div class="spec-item"><div class="spec-label">Panel de pedidos</div><div class="spec-val">✓ Desde celular</div></div>
+              <div class="spec-item"><div class="spec-label">Configuración de envíos</div><div class="spec-val">✓ Por zonas</div></div>
+              <div class="spec-item"><div class="spec-label">Alertas de stock bajo</div><div class="spec-val">✓ Automáticas</div></div>
+              <div class="spec-item"><div class="spec-label">SEO de productos</div><div class="spec-val">✓ Google Shopping</div></div>
+              <div class="spec-item"><div class="spec-label">Dominio + Hosting</div><div class="spec-val">✓ Primer año</div></div>
+              <div class="spec-item"><div class="spec-label">Revisiones</div><div class="spec-val">3 rondas incluidas</div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="e2">
+            <div class="ben-list">
+              <div class="ben-item"><div class="ben-icon">💰</div><div class="ben-text"><h4>Deja de regalar el 15–30% en comisiones</h4><p>En Mercado Libre pagas entre 15% y 30% de comisión por venta. En tu propia tienda: 0%. Con 20 ventas al mes de $1,000, ya recuperaste el costo de la tienda en el primer mes.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🏪</div><div class="ben-text"><h4>Tu marca, tus clientes, tus reglas</h4><p>En Mercado Libre eres un vendedor entre miles. En tu tienda eres la única opción. El cliente vuelve a ti directamente.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📦</div><div class="ben-text"><h4>Control total de tu inventario y pedidos</h4><p>Sabes en tiempo real cuánto tienes, qué se vende más y qué pedidos están pendientes — desde el celular.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🔁</div><div class="ben-text"><h4>Clientes que regresan solos</h4><p>Tu tienda propia te permite hacer email marketing, retargeting y programas de fidelidad. En marketplace no puedes.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🌙</div><div class="ben-text"><h4>Vende mientras duermes</h4><p>Tu tienda procesa pagos, confirma compras y actualiza inventario automáticamente — sin que tú hagas nada.</p></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="e3">
+            <details class="sfaq-item"><summary class="sfaq-q">¿Cómo recibo el dinero de las ventas? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Directamente en tu cuenta. MercadoPago deposita en 1-2 días hábiles a tu cuenta de MercadoPago o bancaria. Stripe deposita en 2-3 días. No hay intermediarios — el dinero llega a ti.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Qué pasa si quiero agregar más de 50 productos después? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Puedes agregar productos tú mismo desde el panel de administración sin ningún límite. Los primeros 50 los cargo yo como parte del servicio para ahorrarte tiempo.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Cómo funciona el inventario si vendo en mi tienda y en Instagram al mismo tiempo? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">El inventario de tu tienda se actualiza automáticamente con cada venta online. Las ventas por Instagram o en físico puedes actualizarlas manualmente desde el panel en segundos.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Mis clientes pueden pagar con cualquier método? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. Configuramos MercadoPago (tarjetas, OXXO, Mercado Crédito, transferencias) y Stripe (tarjetas internacionales). Tus clientes pagan como prefieran.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Necesito saber de tecnología para administrar la tienda? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">No. El panel de administración es tan sencillo como usar Instagram. Subir un producto, ver pedidos, marcar envíos — todo se hace en pocos toques desde tu celular.</div></details>
+          </div>
+          <div class="svc-ipanel" id="e4">
+            <div class="ben-list">
+              <div class="ben-item"><div class="ben-icon">👗</div><div class="ben-text"><h4>Tiendas de ropa y accesorios</h4><p>Muestra tu catálogo completo con tallas, colores y fotos. Recibe pedidos y pagos sin depender de DMs.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🌿</div><div class="ben-text"><h4>Productos naturales, cosméticos y bienestar</h4><p>Descripción detallada de ingredientes, uso y beneficios. El cliente compra más informado.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🍫</div><div class="ben-text"><h4>Alimentos gourmet y artesanales</h4><p>Catálogo con fotos apetitosas, opciones de presentación y notas de alérgenos. Ideal para pedidos especiales.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🎨</div><div class="ben-text"><h4>Artesanías y productos únicos</h4><p>Cada producto es diferente — muéstralo así. Galería detallada, historia del producto y opción de personalización.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📚</div><div class="ben-text"><h4>Cursos digitales y productos descargables</h4><p>Vende ebooks, guías o acceso a cursos con entrega automática al comprador.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-sidebar">
+        <div class="rev-card reveal d1">
+          <div class="rev-header">
+            <div class="rev-score"><div class="rev-score-n">4.8</div><div class="rev-score-stars">★★★★★</div><div class="rev-score-count">11 reseñas</div></div>
+            <div class="rev-bars">
+              <div class="rev-bar-row"><span class="rev-bar-label">5</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:82%"></div></div><span class="rev-bar-pct">82%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">4</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:18%"></div></div><span class="rev-bar-pct">18%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">3</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">2</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">1</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+            </div>
+          </div>
+          <div class="rev-list">
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#F0FDF4;color:#16A34A">VH</div><div><div class="rev-name">Valentina Herrera</div><div class="rev-meta">Tienda de ropa · Toluca · hace 6 semanas</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"En el primer mes recuperé el costo de la tienda solo en comisiones que ya no le pagué a Mercado Libre. Mi margen subió como un 28%. No sé por qué no lo hice antes."</div>
+              <div class="rev-helpful">👍 31 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#FEF2EB;color:#E05C25">MO</div><div><div class="rev-name">Marcos Ortega</div><div class="rev-meta">Productos artesanales · Estado de México · hace 3 meses</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"La tienda se ve increíble y mis clientes pueden pagar con tarjeta directo. Ya no tengo que andar pidiendo transferencias ni persiguiendo pagos. Se agilizó todo."</div>
+              <div class="rev-helpful">👍 14 personas encontraron esto útil</div>
+            </div>
+          </div>
+        </div>
+        <div class="svc-cta-card reveal d2">
+          <h3>¿Quieres tu propia tienda?</h3>
+          <p>Cuéntame qué vendes y en 24 horas tienes una propuesta completa sin costo.</p>
+          <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20quiero%20una%20Tienda%20en%20L%C3%ADnea%20(%2432%2C000).%20Te%20cuento%20sobre%20mi%20negocio." target="_blank" rel="noopener" class="cta-wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero mi tienda online
+          </a>
+          <div class="cta-note">Sin compromiso · Respuesta en menos de 2 horas</div>
+        </div>
+        <div class="guar-card reveal d3">
+          <div class="guar-row"><div class="guar-icon">💳</div><div class="guar-text"><h4>Pagos reales desde el día 1</h4><p>MercadoPago y Stripe configurados y probados antes de entregar.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">📦</div><div class="guar-text"><h4>50 productos cargados incluidos</h4><p>Te ahorro horas de trabajo. Solo mándame la info y yo lo subo.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">📱</div><div class="guar-text"><h4>Gestión desde tu celular</h4><p>Panel de administración diseñado para usarse en móvil, no en escritorio.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PANEL 3: APP / SISTEMA ═══ -->
+    <div class="svc-panel" id="spanel3">
+      <div class="svc-main-card reveal">
+        <div class="svc-hero-band" style="background:linear-gradient(135deg,#F5F3FF 0%,var(--white) 60%)">
+          <div class="svc-hero-emoji">📱</div>
+          <div class="svc-hero-name">App o Sistema a Medida</div>
+          <div class="svc-hero-tag">Una solución digital diseñada exactamente para cómo funciona tu negocio. App iOS y Android, sistema de gestión interna, plataforma web o dashboard. El alcance se define juntos.</div>
+          <div class="svc-hero-price-row">
+            <div class="svc-price-big" style="color:#7C3AED">Desde $60,000</div>
+            <div class="svc-price-sub">MXN · cotización personalizada<br>Precio exacto según tu proyecto</div>
+            <div class="svc-time-badge" style="background:#F5F3FF;border-color:rgba(124,58,237,.2);color:#5B21B6">⏱ 4–10 semanas</div>
+          </div>
+        </div>
+        <div class="svc-inner-tabs">
+          <button class="svc-itab on" onclick="svcInner(this,'a0')">Qué construyo</button>
+          <button class="svc-itab" onclick="svcInner(this,'a1')">Tipos de proyectos</button>
+          <button class="svc-itab" onclick="svcInner(this,'a2')">Proceso</button>
+          <button class="svc-itab" onclick="svcInner(this,'a3')">Preguntas</button>
+        </div>
+        <div class="svc-icontent">
+          <div class="svc-ipanel on" id="a0">
+            <div class="inc-list">
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Diagnóstico gratuito del proyecto</div><div class="inc-sub">Analizamos tu operación actual, identificamos los cuellos de botella y definimos juntos qué construir y en qué orden.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Diseño UX/UI desde cero</div><div class="inc-sub">Prototipo completo en Figma antes de escribir una sola línea de código. Apruebas cada pantalla antes de que se construya.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Desarrollo con tecnología real y escalable</div><div class="inc-sub">React Native para apps, Next.js para plataformas web, Supabase como backend. Código que crece contigo.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Base de datos en tiempo real (Supabase)</div><div class="inc-sub">Todos los datos de tu negocio sincronizados instantáneamente en todos los dispositivos.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Sistema de roles y permisos</div><div class="inc-sub">Admin, operador, cliente — cada persona ve exactamente lo que necesita y nada más. Seguro y organizado.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Publicación en App Store y Play Store (si aplica)</div><div class="inc-sub">Gestiono el proceso completo de publicación en las tiendas de Apple y Google.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">Capacitación del equipo incluida</div><div class="inc-sub">Sesión de onboarding para que tu equipo adopte la herramienta desde el primer día sin fricción.</div></div></div>
+              <div class="inc-item"><div class="inc-check" style="background:#F5F3FF;color:#7C3AED">✓</div><div class="inc-info"><div class="inc-title">3 meses de soporte post-entrega</div><div class="inc-sub">Errores, ajustes y dudas cubiertos los primeros 3 meses sin costo adicional.</div></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="a1">
+            <div class="ben-list">
+              <div class="ben-item"><div class="ben-icon">🏋️</div><div class="ben-text"><h4>Sistemas de gestión para negocios físicos</h4><p>Gimnasios, clínicas, restaurantes, escuelas. Control de clientes, pagos, asistencia e inventario en tiempo real desde cualquier dispositivo.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📦</div><div class="ben-text"><h4>Apps de logística y pedidos</h4><p>Distribuidoras, empresas de mensajería, negocios con entrega a domicilio. Flujo completo de pedido, preparación y entrega.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🎯</div><div class="ben-text"><h4>Plataformas de fidelización y programas de lealtad</h4><p>Como Cliente Excelente de Sigma. Puntos, concursos, progreso personalizado y comunicación directa con tus mejores clientes.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">📊</div><div class="ben-text"><h4>Dashboards y herramientas internas</h4><p>Reportes, métricas, seguimiento de equipos. Si tu negocio necesita visibilidad de sus operaciones en tiempo real.</p></div></div>
+              <div class="ben-item"><div class="ben-icon">🛒</div><div class="ben-text"><h4>Marketplaces y plataformas B2B</h4><p>Si tienes múltiples vendedores, proveedores o necesitas un catálogo con lógica compleja de precios y usuarios.</p></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="a2">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:#F5F3FF;color:#7C3AED;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Diagnóstico gratuito (1–2 días)</div><div style="font-size:13px;color:var(--muted);line-height:1.6">Me cuentas sobre tu negocio, tus procesos actuales y qué quieres mejorar. Yo analizo y propongo la mejor solución técnica.</div></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:#F5F3FF;color:#7C3AED;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Propuesta y alcance definido (24 horas)</div><div style="font-size:13px;color:var(--muted);line-height:1.6">Recibes precio exacto, qué incluye, qué no incluye, tiempos por etapa y condiciones de pago. Sin ambigüedades.</div></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:#F5F3FF;color:#7C3AED;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div><div class="ben-text"><div style="font-size:14px;font-weight:700;margin-bottom:3px">Diseño y prototipo (1–2 semanas)</div><div style="font-size:13px;color:var(--muted);line-height:1.6">Cada pantalla diseñada en Figma y presentada para tu aprobación antes de desarrollar. Lo que apruebas, se construye.</div></div></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:#F5F3FF;color:#7C3AED;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Desarrollo por etapas (2–6 semanas)</div><div style="font-size:13px;color:var(--muted);line-height:1.6">Construyo por módulos y te mando avances funcionando. No esperas hasta el final para ver algo.</div></div></div>
+              <div style="display:flex;gap:14px;align-items:flex-start"><div style="width:32px;height:32px;border-radius:50%;background:#F5F3FF;color:#7C3AED;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</div><div><div style="font-size:14px;font-weight:700;margin-bottom:3px">Entrega, capacitación y soporte (3 meses)</div><div style="font-size:13px;color:var(--muted);line-height:1.6">Tu equipo aprende a usarlo. Los primeros 3 meses cualquier duda, ajuste o error lo resuelvo sin costo.</div></div></div>
+            </div>
+          </div>
+          <div class="svc-ipanel" id="a3">
+            <details class="sfaq-item"><summary class="sfaq-q">¿Cómo sé cuánto va a costar mi proyecto? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">El primer paso es una llamada de diagnóstico gratuita donde me cuentas qué necesitas. Con esa información te mando una propuesta con precio exacto en 24-48 horas. No hay costo por el diagnóstico ni por la propuesta.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Qué tan difícil es que mi equipo aprenda a usarlo? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">El sistema está diseñado desde el principio pensando en tu equipo real — no en usuarios técnicos. El objetivo es que se aprenda solo en los primeros días. Además incluyo una sesión de capacitación al momento de la entrega.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Puede crecer el sistema después? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">Sí. Todo se construye sobre una arquitectura escalable. Si en 6 meses necesitas agregar un módulo nuevo o una funcionalidad adicional, lo desarrollamos por separado sin tener que rehacer todo.</div></details>
+            <details class="sfaq-item"><summary class="sfaq-q">¿Quedo atado a ti para siempre? <span class="sfaq-icon">+</span></summary><div class="sfaq-a">No. El código es tuyo desde el primer día. Uso tecnologías estándar y abiertas (React Native, Supabase, PostgreSQL) para que cualquier desarrollador pueda mantenerlo si así lo decides.</div></details>
+          </div>
+        </div>
+      </div>
+      <div class="svc-sidebar">
+        <div class="rev-card reveal d1">
+          <div class="rev-header">
+            <div class="rev-score"><div class="rev-score-n">5.0</div><div class="rev-score-stars">★★★★★</div><div class="rev-score-count">8 reseñas</div></div>
+            <div class="rev-bars">
+              <div class="rev-bar-row"><span class="rev-bar-label">5</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:100%;background:#7C3AED"></div></div><span class="rev-bar-pct">100%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">4</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">3</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">2</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+              <div class="rev-bar-row"><span class="rev-bar-label">1</span><div class="rev-bar-track"><div class="rev-bar-fill" style="width:0%"></div></div><span class="rev-bar-pct">0%</span></div>
+            </div>
+          </div>
+          <div class="rev-list">
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#F5F3FF;color:#7C3AED">MM</div><div><div class="rev-name">Maria Martinez</div><div class="rev-meta">Gerente · Sigma Alimentos · hace 1 año</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"En pocas semanas teníamos algo real funcionando. No una promesa — un producto. Nuestros colaboradores lo adoptaron desde el primer día sin necesitar capacitación adicional."</div>
+              <div class="rev-helpful">👍 34 personas encontraron esto útil</div>
+            </div>
+            <div class="rev-item">
+              <div class="rev-top"><div class="rev-av" style="background:#FEF2EB;color:#E05C25">GR</div><div><div class="rev-name">Gustavo Ramírez</div><div class="rev-meta">Dueño · Greek Gym · hace 4 meses</div></div></div>
+              <div class="rev-stars">★★★★★</div>
+              <div class="rev-text">"Pasamos de hojas de Excel y WhatsApp a tener todo el gimnasio controlado desde una pantalla. El equipo lo aprendió en dos días. No puedo imaginar trabajar sin él ahora."</div>
+              <div class="rev-helpful">👍 27 personas encontraron esto útil</div>
+            </div>
+          </div>
+        </div>
+        <div class="svc-cta-card reveal d2" style="background:linear-gradient(135deg,#7C3AED 0%,#5B21B6 100%)">
+          <h3>¿Tienes un proyecto en mente?</h3>
+          <p>El diagnóstico es gratuito. Me cuentas, yo analizo y te digo exactamente qué se puede construir y cuánto costaría.</p>
+          <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20quiero%20cotizar%20una%20app%20o%20sistema%20a%20medida%20para%20mi%20negocio.%20Te%20cuento." target="_blank" rel="noopener" class="cta-wa-btn" style="color:#7C3AED">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Hablar sobre mi proyecto
+          </a>
+          <div class="cta-note">Diagnóstico gratis · Sin compromiso</div>
+        </div>
+        <div class="guar-card reveal d3">
+          <div class="guar-row"><div class="guar-icon">📝</div><div class="guar-text"><h4>Código 100% tuyo</h4><p>Te entrego el proyecto completo. No quedas atado a mí para siempre.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">📈</div><div class="guar-text"><h4>Arquitectura escalable</h4><p>Construido para crecer. Puedes agregar módulos en el futuro sin rehacer todo.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">🎓</div><div class="guar-text"><h4>Capacitación incluida</h4><p>Tu equipo aprende a usarlo. Sesión de onboarding al momento de entrega.</p></div></div>
+          <div class="guar-row"><div class="guar-icon">🛡️</div><div class="guar-text"><h4>3 meses de soporte</h4><p>Cualquier ajuste o error, cubierto los primeros 3 meses sin costo.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="port-wrap" id="portafolio">
+  <div class="container">
+    <div class="port-header">
+      <div class="port-header-text">
+        <span class="sec-label reveal">Resultados reales</span>
+        <h2 class="sec-h reveal d1">Resultados que hablan<br>por sí solos.</h2>
+        <p class="sec-sub reveal d2" style="text-align:left;margin:14px 0 0">Cada proyecto nació de un problema real de negocio. Esto es lo que entrego — no capturas de pantalla bonitas, sino soluciones que funcionan en producción.</p>
+      </div>
+      <a href="https://www.behance.net/hazamunguia" target="_blank" rel="noopener" class="port-behance-link reveal d2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.483 1.88 1.189 2.354.434.297.99.415 1.588.415.68 0 1.267-.2 1.714-.615.353-.315.612-.754.734-1.32h2.531zm-5.17-4c-.024-.799-.21-1.329-.498-1.699-.329-.408-.836-.628-1.38-.628-.966 0-1.598.607-1.845 2.327h3.723zM8.309 3H1v18h7.309c4.548 0 6.52-2.407 6.52-5.282 0-2.394-1.714-3.926-3.702-4.169 1.531-.571 2.73-1.863 2.73-3.746C13.857 4.893 11.877 3 8.309 3zM3.93 7.048h3.923c1.487 0 2.428.715 2.428 2.012 0 1.429-1.065 2.178-2.614 2.178H3.93V7.048zm0 9.913V13.2h4.254c1.697 0 2.678.818 2.678 2.017 0 1.297-1.011 1.743-2.654 1.743H3.93z"/></svg>
+        Ver todo en Behance
+      </a>
+    </div>
+
+    <!-- MAIN 3 PROJECTS -->
+    <div class="port-main">
+
+      <!-- PROJECT 1: RocksMan - FEATURED (wide)
+      <div class="port-card featured reveal">
+        <img
+          src="https://framerusercontent.com/images/7a0yTDqVlMiouPFCDZ5F2CyE.png"
+          alt="RocksMan — Sistema administrativo para gimnasio"
+          class="port-img"
+          loading="lazy"
+        >
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-cat">App &amp; Sistema</span>
+            <span class="port-client">Greek Gym</span>
+            <span class="port-year">2026</span>
+          </div>
+          <div class="port-title">RocksMan — Sistema Administrativo para Gimnasio</div>
+          <div class="port-desc">El gimnasio operaba con hojas de cálculo, papel y mensajes de WhatsApp. Diseñé y construí un sistema completo con check-in ágil, control de membresías en tiempo real e inventario automático. El equipo lo adoptó desde el primer día sin capacitación — señal de que el diseño funcionó.</div>
+          <div class="port-tags">
+            <span class="ptag">UX / UI</span>
+            <span class="ptag">App Móvil</span>
+            <span class="ptag">Base de datos en tiempo real</span>
+            <span class="ptag">Diseño de flujos</span>
+          </div>
+          <div class="port-result">✦ De 15 minutos en papel a 60 segundos en pantalla · En producción en 16 semanas</div>
+        </div>
+      </div> -->
+
+      <!-- PROJECT 2: Llevelín -->
+      <div class="port-card reveal d1">
+        <img
+          src="https://framerusercontent.com/images/NgNWjohK3WsFZoIaBNVJhC8YCU.png"
+          alt="Llevelín — Punto de venta y app para abarrotera"
+          class="port-img"
+          loading="lazy"
+        >
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-cat">Branding + App + POS</span>
+            <span class="port-client">Llevelín</span>
+            <span class="port-year">2025</span>
+          </div>
+          <div class="port-title">Llevelín — Marca, POS y App de Pedidos</div>
+          <div class="port-desc">Una distribuidora de abarrotes sin identidad ni sistema digital. Construí la marca desde cero y entregué dos productos funcionando: un punto de venta para el equipo interno y una app para que los clientes hicieran pedidos directo. La captura manual por WhatsApp desapareció.</div>
+          <div class="port-tags">
+            <span class="ptag">Branding</span>
+            <span class="ptag">Punto de Venta</span>
+            <span class="ptag">App de Pedidos</span>
+          </div>
+          <div class="port-result">✦ 2 productos en producción en 12 semanas</div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Sigma Cliente Excelente -->
+      <div class="port-card reveal d2">
+        <img
+          src="https://framerusercontent.com/images/qLQ7P2equfBozTDxodxJYz4E.webp"
+          alt="Cliente Excelente — Sigma Alimentos App"
+          class="port-img"
+          loading="lazy"
+        >
+        <div class="port-body">
+          <div class="port-meta">
+            <span class="port-cat">App Móvil + Dirección de Arte</span>
+            <span class="port-client">Sigma Alimentos</span>
+            <span class="port-year">2023</span>
+          </div>
+          <div class="port-title">Cliente Excelente — Programa de Lealtad Sigma</div>
+          <div class="port-desc">Sigma necesitaba transformar su programa de lealtad B2B en una experiencia premium que los clientes quisieran usar a diario. Dirigí el arte y el diseño UX/UI de una app que centraliza progreso, promociones y concursos — convirtiendo una relación transaccional en algo que se siente como privilegio.</div>
+          <div class="port-tags">
+            <span class="ptag">Dirección de Arte</span>
+            <span class="ptag">UX / UI</span>
+            <span class="ptag">Estrategia</span>
+          </div>
+          <div class="port-result">✦ Se convirtió en el canal principal de comunicación Sigma–clientes</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BEHANCE MINI STRIP -->
+    <div style="margin-top:12px">
+      <p class="reveal" style="font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px">También en Behance →</p>
+      <div class="behance-strip">
+
+        <a href="https://www.behance.net/gallery/178534045/Campanas-Gana-Mas-y-Refrigerizate" target="_blank" rel="noopener" class="beh-card reveal">
+          <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/8bbf57178534045.Y3JvcCwxOTY1LDE1MzcsNDMsMA.jpg" alt="Campañas Gana Más y Refrigerízate · Sigma" class="beh-img" loading="lazy">
+          <div class="beh-body">
+            <div class="beh-cat">Branding · Publicidad</div>
+            <div class="beh-name">Campañas Gana Más y Refrigerízate</div>
+            <div class="beh-sub">Identidad visual y concepto de campaña para Sigma Alimentos</div>
+          </div>
+          <div class="beh-footer">Ver en Behance ↗</div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/162861039/PEPSICO" target="_blank" rel="noopener" class="beh-card reveal d1">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8cee71162861039.63dc288adfb18.png" alt="PepsiCo — Tostitos y Doritos" class="beh-img" loading="lazy">
+          <div class="beh-body">
+            <div class="beh-cat">Publicidad · Motion · Producción</div>
+            <div class="beh-name">PepsiCo — Tostitos &amp; Doritos</div>
+            <div class="beh-sub">Concept art, diseño digital y producción audiovisual para campañas de PepsiCo</div>
+          </div>
+          <div class="beh-footer">Ver en Behance ↗</div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/150469557/Sports-World" target="_blank" rel="noopener" class="beh-card reveal d2">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/771ee7150469557.62fb005fe26a2.png" alt="Sports World — Producción y diseño" class="beh-img" loading="lazy">
+          <div class="beh-body">
+            <div class="beh-cat">Art Direction · Audiovisual · Web</div>
+            <div class="beh-name">Sports World</div>
+            <div class="beh-sub">Campañas ATL, producción audiovisual y diseño web para la cadena líder de gimnasios</div>
+          </div>
+          <div class="beh-footer">Ver en Behance ↗</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <span class="sec-label reveal">Hablemos</span>
+        <h2 class="sec-h reveal d1">¿Prefieres hablar primero? Con mucho gusto.</h2>
+        <p class="reveal d2">No tienes que saber exactamente qué necesitas. Me cuentas sobre tu negocio y yo te digo qué tiene sentido hacer. Sin compromiso, sin presión.</p>
+        <div class="channels">
+          <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20quiero%20hablar%20sobre%20mi%20negocio" target="_blank" rel="noopener" class="channel ch-wa reveal">
+            <div class="channel-icon">💬</div>
+            <div class="channel-info">
+              <div class="channel-label">WhatsApp</div>
+              <div class="channel-val">+52 56 1293 4010</div>
+              <div class="channel-sub">Respuesta en menos de 2 horas · Lunes a viernes</div>
+            </div>
+          </a>
+          <a href="tel:+525612934010" class="channel ch-tel reveal d1">
+            <div class="channel-icon">📞</div>
+            <div class="channel-info">
+              <div class="channel-label">Llamada directa</div>
+              <div class="channel-val">+52 56 1293 4010</div>
+              <div class="channel-sub">9 am – 7 pm · Lunes a viernes</div>
+            </div>
+          </a>
+          <a href="mailto:hgmunguia@gmail.com" class="channel ch-mail reveal d2">
+            <div class="channel-icon">✉️</div>
+            <div class="channel-info">
+              <div class="channel-label">Correo electrónico</div>
+              <div class="channel-val">hgmunguia@gmail.com</div>
+              <div class="channel-sub">Respuesta en el mismo día hábil</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- CONTACT FORM -->
+      <div class="contact-form reveal d1">
+        <div class="form-title">Cuéntame sobre tu proyecto</div>
+        <div class="form-sub">Te respondo con una propuesta en menos de 24 horas.</div>
+        <form id="cForm" onsubmit="handleForm(event)">
+          <div class="field">
+            <label for="fname">Tu nombre</label>
+            <input type="text" id="fname" placeholder="María García" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="fwhat">¿A qué se dedica tu negocio?</label>
+            <input type="text" id="fwhat" placeholder="Clínica dental, tienda de ropa, despacho..." required>
+          </div>
+          <div class="field">
+            <label for="fneed">¿Qué quieres lograr?</label>
+            <select id="fneed" required>
+              <option value="">Selecciona una opción</option>
+              <option value="encontrar">Que me encuentren en Google y se vean serios</option>
+              <option value="citas">Recibir citas o reservas online</option>
+              <option value="vender">Vender mis productos en internet</option>
+              <option value="organizar">Organizar mejor mi negocio</option>
+              <option value="otro">Algo diferente (me explicas)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fmsg">¿Algo más que quieras contarme? <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+            <textarea id="fmsg" placeholder="Cuéntame sobre tu negocio, qué tienes actualmente, cuándo lo necesitas..."></textarea>
+          </div>
+          <button type="submit" class="btn-send">Enviar y recibir propuesta →</button>
+          <div class="form-note">Sin spam. Sin compromiso. Te respondo hoy o mañana.</div>
+        </form>
+        <div id="formSuccess" style="display:none;text-align:center;padding:32px 0">
+          <div style="font-size:40px;margin-bottom:12px">🎉</div>
+          <div style="font-size:18px;font-weight:700;margin-bottom:8px">¡Listo, ya lo recibí!</div>
+          <div style="font-size:14px;color:var(--muted)">Te respondo con una propuesta personalizada en menos de 24 horas. Si tienes prisa, escríbeme por WhatsApp ahora mismo.</div>
+          <a href="https://wa.me/5215612934010" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:100px;font-weight:700;margin-top:20px;font-size:14px">💬 Ir a WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-in">
+      <div class="foot-logo">Haza<span>.</span> Munguia</div>
+      <ul class="foot-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#como-funciona">Proceso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://linkedin.com/in/hazamunguia" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://instagram.com/hazamunguia" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="foot-copy">© 2026 Haza Munguia · México 🇲🇽</div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<div class="wa-float">
+  <a href="https://wa.me/5215612934010?text=Hola%20Haza%2C%20quiero%20hablar%20sobre%20mi%20negocio" target="_blank" rel="noopener" class="wa-ball" title="Escríbeme por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────
+const RESULTS = {
+  presencia: {
+    icon: '🌐', iconBg: '#FEF2EB',
+    name: 'Tu sitio web profesional',
+    tag: 'La solución perfecta para que tus clientes te encuentren y confíen en ti.',
+    note: '🎯 Basado en lo que me contaste, lo que más te va a beneficiar ahora mismo es tener una presencia digital sólida en Google. Cuando alguien te busque, va a encontrar exactamente lo que necesita para decidir contactarte.',
+    benefits: [
+      'Tus clientes te encuentran cuando buscan en Google',
+      'Primera impresión profesional que genera confianza instantánea',
+      'Botón de WhatsApp y formulario de contacto directo',
+      'Se ve perfecto en celular — donde el 89% navega en México',
+      'Tu información siempre disponible, las 24 horas del día',
+    ],
+    checkColor: '#E05C25', checkBg: '#FEF2EB',
+    price: '$12,000', priceSub: 'MXN · pago único',
+    time: '7 a 10 días', timeSub: 'días hábiles desde que iniciamos',
+    maint: '$1,500/mes',
+    waMsg: 'Hola%20Haza%2C%20el%20cotizador%20me%20recomienda%20un%20sitio%20web%20profesional%20(%2412%2C000).%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s.'
+  },
+  sistema: {
+    icon: '📅', iconBg: '#EFF6FF',
+    name: 'Sitio web con sistema de citas',
+    tag: 'Para negocios que quieren que sus clientes agenden solos, sin intermediarios.',
+    note: '🎯 Según lo que me dijiste, tu negocio necesita algo más que una presencia — necesita que los clientes puedan actuar directamente. Un sistema de citas online significa que mientras atiendes a un cliente, otro ya está agendando solo.',
+    benefits: [
+      'Tus clientes agendan solos — sin que tengas que contestar mensajes',
+      'Notificaciones automáticas en tu celular cada que llega una cita',
+      'Tu negocio trabajando para ti incluso cuando estás ocupado',
+      'Catálogo de servicios claro y atractivo para que elijan',
+      'Integrado con tu WhatsApp y tu correo desde el primer día',
+    ],
+    checkColor: '#2563EB', checkBg: '#EFF6FF',
+    price: '$20,000', priceSub: 'MXN · pago único',
+    time: '12 a 18 días', timeSub: 'días hábiles desde que iniciamos',
+    maint: '$2,500/mes',
+    waMsg: 'Hola%20Haza%2C%20el%20cotizador%20me%20recomienda%20un%20sitio%20con%20sistema%20de%20citas%20(%2420%2C000).%20Quisiera%20saber%20m%C3%A1s.'
+  },
+  ecommerce: {
+    icon: '🛒', iconBg: '#F0FDF4',
+    name: 'Tu tienda online propia',
+    tag: 'Vende en internet 24/7 con tu propia marca, sin pagar comisiones a nadie.',
+    note: '🎯 Vender por Mercado Libre o Instagram significa depender de otras plataformas y perder hasta el 25-30% en comisiones. Con tu propia tienda, ese dinero se queda en tu bolsillo y tu marca crece con cada venta.',
+    benefits: [
+      'Tus clientes compran directamente — sin intermediarios ni comisiones',
+      'Acepta pagos con tarjeta, transferencia y MercadoPago',
+      'Tú controlas tu catálogo, precios y pedidos desde tu celular',
+      'Sin comisiones del 15-30% que cobran los marketplaces',
+      'Tu marca, tu tienda, tus clientes — todo 100% tuyo',
+    ],
+    checkColor: '#16A34A', checkBg: '#F0FDF4',
+    price: '$32,000', priceSub: 'MXN · pago único',
+    time: '20 a 28 días', timeSub: 'días hábiles desde que iniciamos',
+    maint: '$2,500/mes',
+    waMsg: 'Hola%20Haza%2C%20el%20cotizador%20me%20recomienda%20una%20tienda%20online%20(%2432%2C000).%20Me%20gustar%C3%ADa%20hablar%20sobre%20mi%20proyecto.'
+  },
+  app: {
+    icon: '📊', iconBg: '#F5F3FF',
+    name: 'Sistema o app a medida',
+    tag: 'Una solución hecha exactamente para los procesos únicos de tu negocio.',
+    note: '🎯 Organizar un negocio con hojas de Excel, mensajes de WhatsApp y papeles sueltos cuesta tiempo y dinero todos los días. Una solución a medida centraliza todo y te da el control total de tu operación.',
+    benefits: [
+      'Diseñado exactamente para cómo funciona tu negocio, no al revés',
+      'Centraliza clientes, pagos, inventario — lo que tú necesites',
+      'Tu equipo trabaja más eficiente y con menos errores desde el día 1',
+      'Accesible desde cualquier celular, en tiempo real',
+      'Crece contigo — se ajusta cuando tu negocio evoluciona',
+    ],
+    checkColor: '#7C3AED', checkBg: '#F5F3FF',
+    price: 'Cotización gratis', priceSub: 'según tu proyecto específico',
+    time: 'A definir juntos', timeSub: 'según el alcance de tu proyecto',
+    maint: 'Incluido los primeros 3 meses',
+    waMsg: 'Hola%20Haza%2C%20el%20cotizador%20me%20recomienda%20un%20sistema%20a%20medida.%20Quisiera%20contarte%20sobre%20mi%20negocio.'
+  }
+};
+
+const answers = {};
+let currentStep = 1;
+
+// ── WIZARD LOGIC ──────────────────────────────────────────────────
+function pick(el, key, val) {
+  // Deselect siblings
+  el.closest('.opts').querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  answers[key] = val;
+  // Enable next button
+  const nextBtn = document.getElementById('next' + currentStep);
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function goStep(n) {
+  // Validate current
+  const keys = ['negocio', 'objetivo', 'urgencia'];
+  if (!answers[keys[currentStep - 1]]) return;
+
+  document.getElementById('step' + currentStep).classList.remove('show');
+  currentStep = n;
+  document.getElementById('step' + currentStep).classList.add('show');
+  updateProgress();
+}
+
+function updateProgress() {
+  [1,2,3].forEach(i => {
+    const dot = document.getElementById('dot' + i);
+    dot.classList.remove('active','done');
+    if (i < currentStep) dot.classList.add('done');
+    if (i === currentStep) dot.classList.add('active');
+  });
+  document.getElementById('stepLabel').textContent = 'Paso ' + currentStep + ' de 3';
+}
+
+function showResult() {
+  if (!answers.urgencia) return;
+  // Determine result
+  let type = 'presencia';
+  if (answers.objetivo === 'vender') type = 'ecommerce';
+  else if (answers.objetivo === 'organizar') type = 'app';
+  else if (answers.objetivo === 'citas' || answers.negocio === 'comida' || answers.negocio === 'belleza') type = 'sistema';
+
+  const r = RESULTS[type];
+
+  // Hide steps, show progress as done
+  document.getElementById('step3').classList.remove('show');
+  document.getElementById('progress').style.display = 'none';
+
+  // Fill result
+  const icon = document.getElementById('resultIcon');
+  icon.textContent = r.icon;
+  icon.style.background = r.iconBg;
+
+  document.getElementById('resultName').textContent = r.name;
+  document.getElementById('resultTag').textContent = r.tag;
+  document.getElementById('resultNote').textContent = r.note;
+
+  const benefits = document.getElementById('resultBenefits');
+  benefits.innerHTML = r.benefits.map(b => `
+    <div class="rb">
+      <div class="rb-check" style="background:${r.checkBg};color:${r.checkColor}">✓</div>
+      <span>${b}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('resultPrice').textContent = r.price;
+  document.getElementById('resultPrice').nextElementSibling.textContent = r.priceSub;
+  document.getElementById('resultTime').textContent = r.time;
+  document.getElementById('resultTimeSub').textContent = r.timeSub;
+
+  const waLink = `https://wa.me/5215612934010?text=${r.waMsg}`;
+  document.getElementById('resultWA').href = waLink;
+
+  const rs = document.getElementById('result-section');
+  rs.classList.add('show');
+}
+
+function restartWiz() {
+  // Reset
+  Object.keys(answers).forEach(k => delete answers[k]);
+  currentStep = 1;
+  document.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
+  document.querySelectorAll('.wiz-section').forEach(s => s.classList.remove('show'));
+  document.getElementById('result-section').classList.remove('show');
+  document.getElementById('step1').classList.add('show');
+  document.getElementById('progress').style.display = 'flex';
+  updateProgress();
+}
+
+// ── NAV ──────────────────────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('up', scrollY > 50));
+
+// ── MOBILE MENU ──────────────────────────────────────────────────
+const ham = document.getElementById('ham');
+const mob = document.getElementById('mob');
+document.getElementById('mobClose').addEventListener('click', closeMob);
+ham.addEventListener('click', () => {
+  mob.classList.toggle('open');
+  ham.classList.toggle('x');
+});
+function closeMob() { mob.classList.remove('open'); ham.classList.remove('x'); }
+
+// ── REVEAL ──────────────────────────────────────────────────────
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// ── FORM ────────────────────────────────────────────────────────
+function handleForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value;
+  const what = document.getElementById('fwhat').value;
+  const need = document.getElementById('fneed').value;
+  const msg  = document.getElementById('fmsg').value;
+  // Build WA message
+  const waText = encodeURIComponent(`Hola Haza, me llamo ${name}. Tengo un negocio de ${what} y quiero: ${need}. ${msg}`);
+  window.open(`https://wa.me/5215612934010?text=${waText}`, '_blank');
+  document.getElementById('cForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// ── SERVICES ─────────────────────────────────────────────────────
+function svcTab(idx) {
+  document.querySelectorAll('.svc-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.svc-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+function svcInner(btn, panelId) {
+  const card = btn.closest('.svc-main-card');
+  card.querySelectorAll('.svc-itab').forEach(t => t.classList.remove('on'));
+  card.querySelectorAll('.svc-ipanel').forEach(p => p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById(panelId).classList.add('on');
+}
+
+// ── SMOOTH SCROLL ───────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
