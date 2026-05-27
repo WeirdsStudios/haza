@@ -1505,5 +1505,76 @@ document.querySelectorAll('[href="#aviso-privacidad"]').forEach(function(a){
   });
 });
 </script>
+
+
+<script>
+/* ── Reviews v5 ── */
+var _rvRating = {};
+
+// Ir a una card por índice y actualizar dots
+function rvGo(panel, idx) {
+  var wrap = document.getElementById('rv' + panel);
+  if (!wrap) return;
+  var card = wrap.querySelector('.rv-card');
+  if (!card) return;
+  wrap.scrollTo({ left: card.offsetWidth * idx, behavior: 'smooth' });
+  rvDots(panel, idx);
+}
+
+// Actualizar dots activo
+function rvDots(panel, idx) {
+  var dots = document.querySelectorAll('#rd' + panel + ' .rv-dot');
+  dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+}
+
+// Listener scroll manual → sync dots
+(function() {
+  [0,1,2,3].forEach(function(p) {
+    var el = document.getElementById('rv' + p);
+    if (!el) return;
+    el.addEventListener('scroll', function() {
+      var card = el.querySelector('.rv-card');
+      if (!card || !card.offsetWidth) return;
+      var idx = Math.round(el.scrollLeft / card.offsetWidth);
+      rvDots(p, idx);
+    }, { passive: true });
+  });
+})();
+
+// Seleccionar estrellas
+function rvStar(panel, val) {
+  _rvRating[panel] = val;
+  var btns = document.querySelectorAll('#sp' + panel + ' button');
+  btns.forEach(function(b, i) { b.classList.toggle('on', i < val); });
+}
+
+// Enviar opinión por WhatsApp a Haza para revisión manual
+function rvSend(panel) {
+  var rating = _rvRating[panel] || 0;
+  var name   = (document.getElementById('rn' + panel).value || '').trim();
+  var text   = (document.getElementById('rt' + panel).value || '').trim();
+
+  if (!rating)        { alert('Selecciona una calificación de estrellas.'); return; }
+  if (!name)          { alert('Escribe tu nombre y negocio.'); return; }
+  if (text.length < 20) { alert('Escribe al menos 20 caracteres en tu opinión.'); return; }
+
+  var stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+  var msg   = '⭐ Nueva opinión:\n' + stars + '\n👤 ' + name + '\n💬 ' + text;
+  window.open('https://wa.me/5215612934010?text=' + encodeURIComponent(msg), '_blank');
+
+  // Reset
+  document.getElementById('rn' + panel).value = '';
+  document.getElementById('rt' + panel).value = '';
+  _rvRating[panel] = 0;
+  document.querySelectorAll('#sp' + panel + ' button').forEach(function(b) { b.classList.remove('on'); });
+
+  var ok = document.getElementById('ro' + panel);
+  ok.style.display = 'block';
+  setTimeout(function() { ok.style.display = 'none'; }, 5000);
+}
+</script>
+
+
+  
 </body>
 </html>
