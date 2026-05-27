@@ -1046,21 +1046,11 @@ details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border
   }
 }
 
-/* Fix ancho reviews — mismo width que el resto */
-.rev-card {
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  max-width: 100% !important;
-}
 
-.rv-carousel {
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-}
-
-.rv-card {
-  flex: 0 0 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
+/*Ajuste width*/
+@media(max-width:768px){
+  .svc-sidebar {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
 }
