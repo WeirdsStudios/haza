@@ -951,3 +951,97 @@ details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border
     align-self: center !important;
   }
 }
+
+
+@media(max-width:860px){
+  .fase-tabs{
+    flex-direction: row !important;
+    padding: 8px !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+  }
+  .fase-tab{
+    flex: 1 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 10px 4px !important;
+    text-align: center !important;
+    gap: 4px !important;
+  }
+  .fase-tab-sub{ display: none !important; }
+  .fase-tab-title{ font-size: 11px !important; }
+  .fase-tab-num{ font-size: 18px !important; min-width: unset !important; }
+  .fase-connector{
+    width: 1px !important;
+    height: auto !important;
+    align-self: stretch !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+
+
+@media(max-width:640px){
+
+  /* Barras más anchas y visibles */
+  .rev-header{
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .rev-score{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .rev-bars{
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .rev-bar-track{
+    height: 8px !important;
+  }
+
+  /* Separar cada opinión visualmente */
+  .rv-card{
+    background: #FFFFFF !important;
+    border: 1.5px solid #E5DED4 !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06) !important;
+  }
+  .rv-stars{
+    margin-bottom: 8px !important;
+  }
+  .rv-text{
+    font-size: 14px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid #F0EAE2 !important;
+  }
+
+  /* Formulario "Deja tu opinión" más destacado */
+  .rv-form{
+    margin-top: 16px !important;
+    padding: 16px !important;
+    background: #FEF2EB !important;
+    border-radius: 14px !important;
+    border: 1.5px solid rgba(224,92,37,.2) !important;
+    border-top: none !important;
+  }
+  .rv-form-title{
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    color: #E05C25 !important;
+    margin-bottom: 12px !important;
+  }
+  .rv-stars-pick button{
+    font-size: 26px !important;
+  }
+  .rv-submit-btn{
+    padding: 13px !important;
+    font-size: 14px !important;
+    margin-top: 4px !important;
+  }
+}
