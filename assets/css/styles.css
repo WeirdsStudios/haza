@@ -924,3 +924,30 @@ details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border
 .rv-submit-btn{ width:100%; background:#E05C25; color:#fff; border:none; border-radius:100px; padding:11px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; transition:background .2s; }
 .rv-submit-btn:hover{ background:#C44D1A; }
 .rv-ok        { display:none; text-align:center; padding:10px; font-size:12px; font-weight:600; color:#16A34A; background:#F0FDF4; border-radius:8px; border:1.5px solid rgba(22,163,74,.2); margin-top:6px; }
+
+
+/*Ajuste menu fases*/
+
+@media(max-width:860px){
+  .fase-tabs{
+    flex-direction: row !important;
+    padding: 8px !important;
+    gap: 0 !important;
+  }
+  .fase-tab{
+    flex: 1 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    padding: 12px 6px !important;
+    text-align: center !important;
+    gap: 4px !important;
+  }
+  .fase-tab-sub{ display: none !important; }
+  .fase-connector{
+    width: 1px !important;
+    height: 32px !important;
+    align-self: center !important;
+  }
+}
