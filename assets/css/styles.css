@@ -1054,3 +1054,15 @@ details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border
     max-width: 100% !important;
   }
 }
+
+/*Ajuste width2*/
+@media(max-width:768px){
+  .svc-panel,
+  .svc-main-card,
+  .svc-sidebar,
+  .svc-layout {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
