@@ -1066,3 +1066,13 @@ details[open] .sfaq-icon{transform:rotate(45deg);background:var(--orange);border
     box-sizing: border-box !important;
   }
 }
+
+/*Ajuste width3*/
+@media(max-width:768px){
+  .rev-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
