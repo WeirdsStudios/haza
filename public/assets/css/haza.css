@@ -1,0 +1,110 @@
+/* ============================================================
+   HAZA MUNGUIA — CSS OVERRIDES
+   Loaded after main.css. Overrides color, font, and accents.
+   ============================================================ */
+
+/* ─── FORCE DARK ALWAYS ─────────────────────────────────────── */
+/* The html element has data-bs-theme="dark" always.
+   This block removes the primary orange and sets our palette. */
+
+:root,
+[data-bs-theme=dark] {
+  /* Font override: Space Grotesk everywhere */
+  --at-ff-body:    'Space Grotesk', system-ui, sans-serif;
+  --at-ff-heading: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Primary accent: warm white instead of orange */
+  --at-theme-primary: #F0EFEB;
+  --at-gradient-primary: linear-gradient(90deg, #F0EFEB 0%, #888 100%);
+
+  /* Override backgrounds to Haza's palette */
+  --at-neutral-dark-0:   #0A0A0A;
+  --at-neutral-dark-50:  #111111;
+  --at-neutral-dark-100: #1A1A1A;
+  --at-neutral-dark-200: #252525;
+  --at-neutral-dark-300: #333333;
+  --at-neutral-dark-500: #888888;
+  --at-neutral-dark-700: #555555;
+  --at-neutral-dark-800: #DADAD6;
+  --at-neutral-dark-900: #ECEAE6;
+  --at-neutral-dark-950: #F0EFEB;
+}
+
+/* Remove the DM Sans font references that might override */
+body,
+h1, h2, h3, h4, h5, h6,
+.at-section-title,
+.at-hero-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+}
+
+/* ─── LOGO: use white version always (dark bg) ──────────────── */
+.at-header-logo img,
+.at-offcanvas-logo img {
+  filter: none !important; /* SVG is already white version */
+  height: 28px;
+  width: auto;
+}
+
+/* ─── CURSOR TRAIL: monochrome ──────────────────────────────── */
+/* Override any colored cursor trail to pure white */
+.cursor-trail-dot,
+.cursor-trail,
+.magic-cursor,
+.cursor-inner,
+.cursor-outer {
+  background-color: rgba(240, 239, 235, 0.5) !important;
+  border-color: rgba(240, 239, 235, 0.3) !important;
+}
+
+/* ─── PRIMARY COLOR: override all orange instances ──────────── */
+.fill-primary path,
+.text-primary,
+.at-btn.bg-primary,
+.at-btn.bg-primary-1 {
+  fill: var(--at-theme-primary) !important;
+  color: var(--at-theme-primary) !important;
+}
+
+.bg-primary,
+.bg-primary-1,
+.at-hero-area.bg-primary-1 {
+  background-color: var(--at-neutral-dark-0) !important;
+}
+
+/* ─── BUTTONS: override orange fills ───────────────────────── */
+.at-btn {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ─── MARQUEE: override orange borders/dots ─────────────────── */
+.carouselTicker__item::before,
+.carouselTicker-item-dot {
+  background-color: rgba(240, 239, 235, 0.3) !important;
+}
+
+/* ─── SECTION TITLES: tighter tracking, Haza style ─────────── */
+.at-section-title,
+.at-hero-title {
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar         { width: 4px; }
+::-webkit-scrollbar-track   { background: #0A0A0A; }
+::-webkit-scrollbar-thumb   { background: rgba(240,239,235,0.15); border-radius: 2px; }
+
+/* ─── SELECTION ──────────────────────────────────────────────── */
+::selection {
+  background: #F0EFEB;
+  color: #0A0A0A;
+}
+
+/* ─── THEME SWITCHER: hidden — no toggle, always dark ──────── */
+.at-theme-switcher,
+.theme-switcher,
+[class*="theme-switch"],
+[class*="ThemeSwitcher"] {
+  display: none !important;
+}
