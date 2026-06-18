@@ -63,7 +63,7 @@ export default function App() {
   return (
     <Routes>
       <Route element={<MainLayout headerStyle={1} footerStyle={1} />}>
-        <Route path="/" element={<Home1Page />} />
+        <Route path="/" element={<Home4Page />} />
         <Route path="/index-dark" element={<Home1Page />} />
       </Route>
       <Route element={<MainLayout headerStyle={1} footerStyle={1} noFooter />}>
