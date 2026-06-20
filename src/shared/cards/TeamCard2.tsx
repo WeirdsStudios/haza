@@ -43,6 +43,8 @@ export type TeamCard2Props = {
     classList?: string;
     delay?: string;
     socialLinks?: { href: string; label: string; key: keyof typeof SOCIAL_ICONS }[];
+    bio?: string;
+    skills?: string[];
 };
 
 export default function TeamCard2({
@@ -53,6 +55,8 @@ export default function TeamCard2({
     classList = "",
     delay = "0",
     socialLinks,
+    bio,
+    skills,
 }: TeamCard2Props) {
     const links = socialLinks ?? DEFAULT_SOCIAL_LINKS.map(({ key, label }) => ({ href: "#", label, key }));
 
@@ -82,6 +86,14 @@ export default function TeamCard2({
                         <h6 className="fz-font-2xl fw-600 m-0">{name}</h6>
                     </Link>
                     <span className="team-card-2__position">{position}</span>
+                    {bio && <p className="mt-3 mb-2 fz-font-sm">{bio}</p>}
+                    {skills && skills.length > 0 && (
+                        <div className="d-flex flex-wrap gap-2 mt-2">
+                            {skills.map((s) => (
+                                <span key={s} className="card_case__studies-tag">{s}</span>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

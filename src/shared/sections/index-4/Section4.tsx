@@ -50,46 +50,40 @@ const DIAMOND_ICON = (
 );
 
 const FEATURED_TAGS = [
-    "AI Application",
-    "Data Pipelines",
-    "Enterprise Systems",
-    "Experimental",
+    "APP INTEGRADA",
+    "APP A MEDIDA",
+    "ACOMPAÑAMIENTO",
+    "SISTEMAS",
 ];
 
 const PORTFOLIO_CARDS = [
     {
         classList: "col-lg-6",
-        link: "#",
+        link: "/sistema",
         img: "/assets/imgs/pages/img-87.webp",
-        title: "Smart Automation",
-        metricPrefix: "+",
-        metricValue: "30",
-        metricLabel: "Operational Speed",
-        tags: ["AI Models", "Deployment", "Scalability", "Engineering"],
+        title: "Modular · Escalable a tu ritmo",
+        metricPrefix: "",
+        metricValue: "App Integrada",
+        metricSuffix: "",
+        metricLabel: "",
+        tags: ["MÓDULOS", "ESCALABLE", "MULTIDOMO", "FLEXIBLE"],
+        linkLabel: "VER DETALLE",
     },
     {
         classList: "col-lg-6",
-        link: "#",
+        link: "/sistema",
         img: "/assets/imgs/pages/img-88.webp",
-        title: "Data Intelligence",
-        metricPrefix: "-",
-        metricValue: "20",
-        metricLabel: "Planning Risk",
-        tags: ["Decision Systems", "Analytics", "Systems", "Engineering"],
+        title: "Exclusivo · Construido para tu operación",
+        metricPrefix: "",
+        metricValue: "App a Medida",
+        metricSuffix: "",
+        metricLabel: "",
+        tags: ["CUSTOM", "EXCLUSIVO", "ARQUITECTURA PROPIA", "ÚNICO"],
+        linkLabel: "VER DETALLE",
     },
 ];
 
-type Brand = { src: string; width: number; height: number };
-
-const BRANDS: Brand[] = [
-    { src: "/assets/imgs/template/logo/logo-brand-09.webp", width: 117, height: 32 },
-    { src: "/assets/imgs/template/logo/logo-brand-01.webp", width: 130, height: 33 },
-    { src: "/assets/imgs/template/logo/logo-brand-02.webp", width: 130, height: 38 },
-    { src: "/assets/imgs/template/logo/logo-brand-03.webp", width: 125, height: 27 },
-    { src: "/assets/imgs/template/logo/logo-brand-04.webp", width: 105, height: 24 },
-    { src: "/assets/imgs/template/logo/logo-brand-10.webp", width: 135, height: 48 },
-    { src: "/assets/imgs/template/logo/logo-brand-06.webp", width: 125, height: 28 },
-];
+const TECH_STACK = ["Flutter", "Firebase", "Figma", "MercadoPago", "Google Cloud", "Supabase"];
 
 export default function Section4() {
     return (
@@ -100,8 +94,8 @@ export default function Section4() {
                         <div className="col-xxl-6 col-lg-6">
                             <span className="at-btn common-black text-uppercase bg-transparent mb-10 rounded-0 p-0">
                                 <span className="text-uppercase">
-                                    <span className="text-1">CASE STUDIES</span>
-                                    <span className="text-2">CASE STUDIES</span>
+                                    <span className="text-1">Para tu industria</span>
+                                    <span className="text-2">Para tu industria</span>
                                 </span>
                                 <i>
                                     {ARROW_SVG}
@@ -109,7 +103,7 @@ export default function Section4() {
                                 </i>
                             </span>
                             <h3 className="reveal-text mb-0">
-                                <RevealText>Real-world AI solutions with measurable impact</RevealText>
+                                <RevealText>Soluciones que se adaptan al tipo y tamaño de tu operación.</RevealText>
                             </h3>
                         </div>
                         <div className="col-lg-3 ms-auto d-flex justify-content-lg-end">
@@ -119,13 +113,13 @@ export default function Section4() {
                                 data-fade-from="bottom"
                                 data-ease="bounce"
                             >
-                                <Link className="at-btn-circle" to="/portfolio-4">
+                                <Link className="at-btn-circle" to="/sistema">
                                     {ARROW_CIRCLE}
                                 </Link>
-                                <Link className="at-btn z-index-1" to="/portfolio-4">
-                                    View All Projects
+                                <Link className="at-btn z-index-1" to="/sistema">
+                                    Ver el Sistema
                                 </Link>
-                                <Link className="at-btn-circle" to="/portfolio-4">
+                                <Link className="at-btn-circle" to="/sistema">
                                     {ARROW_CIRCLE}
                                 </Link>
                             </div>
@@ -139,33 +133,31 @@ export default function Section4() {
                             <div className="card_case__studies-list">
                                 <div className="card_case__studies-card">
                                     <div className="card_case__studies-left">
-                                        <span className="card_case__studies-featured-tag">Featured case</span>
+                                        <span className="card_case__studies-featured-tag">PARA TU NEGOCIO</span>
                                         <h4 className="card_case__studies-title">
-                                            <Link to="#">
-                                                AI-Driven Demand <br /> Forecasting System
+                                            <Link to="/sistema">
+                                                Sistemas que resuelven cómo vendes, atiendes y consigues clientes.
                                             </Link>
                                         </h4>
                                         <p className="card_case__studies-desc">
-                                            We built an intelligent forecasting platform that helps enterprises
-                                            predict demand, optimize inventory, and reduce operational risk using
-                                            real-time data and machine learning models.
+                                            No importa si tienes una clínica, un restaurante, una tienda o un despacho profesional — construimos el sistema que necesita tu operación específica, sin soluciones genéricas.
                                         </p>
                                         <div className="card_case__studies-metrics">
                                             <div className="card_case__studies-metric">
                                                 <h4 className="card_case__studies-metric-value mb-0">
-                                                    <OdometerCounter count={72} prefix="+" suffix="%" />
+                                                    <OdometerCounter count={10} prefix="" suffix="+" />
                                                 </h4>
                                                 <span className="card_case__studies-metric-label">
-                                                    Planning Efficiency
+                                                    Años en diseño e ingeniería
                                                 </span>
                                             </div>
                                             <div className="card_case__studies-metric-divider" />
                                             <div className="card_case__studies-metric">
                                                 <h4 className="card_case__studies-metric-value mb-0">
-                                                    <OdometerCounter count={18} prefix="-" suffix="%" />
+                                                    <OdometerCounter count={3} prefix="" suffix="" />
                                                 </h4>
                                                 <span className="card_case__studies-metric-label">
-                                                    Inventory Cost
+                                                    Plataformas: web, móvil y escritorio
                                                 </span>
                                             </div>
                                         </div>
@@ -177,8 +169,8 @@ export default function Section4() {
                                                     </Link>
                                                 ))}
                                             </div>
-                                            <Link to="#" className="card_case__studies-link text-white">
-                                                <span className="text-white text-nowrap">View case</span>
+                                            <Link to="/sistema" className="card_case__studies-link text-white">
+                                                <span className="text-white text-nowrap">EXPLORAR</span>
                                                 {PLUS_ICON}
                                             </Link>
                                         </div>
@@ -217,8 +209,10 @@ export default function Section4() {
                                 title={card.title}
                                 metricPrefix={card.metricPrefix}
                                 metricValue={card.metricValue}
+                                metricSuffix={card.metricSuffix}
                                 metricLabel={card.metricLabel}
                                 tags={card.tags}
+                                linkLabel={card.linkLabel}
                             />
                         ))}
                     </div>
@@ -232,40 +226,26 @@ export default function Section4() {
                                 <div className="content">
                                     <h5 className="revert-text mb-0 reveal-text">
                                         <RevealText>
-                                            Orisa is a digital agency creating impactful digital experiences. We
-                                            think like strategists and execute with clarity, creativity, and
-                                            performance.
+                                            Haza Munguia Studio construye sistemas digitales que transforman la operación de tu empresa. Pensamos como estrategas y ejecutamos con claridad, creatividad y rendimiento.
                                         </RevealText>
                                     </h5>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <span className="neutral-500 fw-600 text-uppercase">trusted by</span>
-                            <div className="d-flex align-items-center flex-wrap gap-lg-5 gap-4 mb-40 pt-30">
-                                {BRANDS.slice(0, 3).map((brand, i) => (
-                                    <div key={i} className="brand">
-                                        <img
-                                            src={brand.src}
-                                            alt={`Brand ${i + 1}`}
-                                            width={brand.width}
-                                            height={brand.height}
-                                            className="dark-mode-invert"
-                                            style={{ height: 30, width: "auto" }} loading="lazy" />
-                                    </div>
+                            <span className="neutral-500 fw-600 text-uppercase">CONSTRUIDO CON</span>
+                            <div className="d-flex align-items-center flex-wrap gap-lg-5 gap-4 mb-30 pt-30">
+                                {TECH_STACK.slice(0, 3).map((name) => (
+                                    <span key={name} className="fw-700 text-uppercase" style={{ fontSize: 13, letterSpacing: '0.04em', opacity: 0.55 }}>
+                                        {name}
+                                    </span>
                                 ))}
                             </div>
                             <div className="d-flex align-items-center flex-wrap gap-lg-5 gap-4">
-                                {BRANDS.slice(3, 7).map((brand, i) => (
-                                    <div key={i} className="brand">
-                                        <img
-                                            src={brand.src}
-                                            alt={`Brand ${i + 4}`}
-                                            width={brand.width}
-                                            height={brand.height}
-                                            className="dark-mode-invert"
-                                            style={{ height: 30, width: "auto" }} loading="lazy" />
-                                    </div>
+                                {TECH_STACK.slice(3).map((name) => (
+                                    <span key={name} className="fw-700 text-uppercase" style={{ fontSize: 13, letterSpacing: '0.04em', opacity: 0.55 }}>
+                                        {name}
+                                    </span>
                                 ))}
                             </div>
                         </div>

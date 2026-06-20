@@ -13,39 +13,47 @@ const ARROW_SVG = (
 const ARTICLES = [
     {
         classList: "col-lg-3 col-md-6 col-12",
-        linkPost: "/blog-details",
-        linkAuthor: "/team-details",
+        linkPost: "/blog/senales-sistema-digital",
+        linkAuthor: "/",
         img: "/assets/imgs/pages/img-97.webp",
-        title: "Designing Digital Experiences That Connect Brands and People",
-        author: "Olivia",
-        date: "July 3, 2026",
+        category: "Estrategia Digital",
+        title: "5 señales de que tu negocio ya está listo para su primer sistema digital",
+        excerpt: "Si llevas más de 3 años operando y todavía manejas clientes por WhatsApp o Excel, probablemente ya perdiste tiempo y dinero sin darte cuenta. Aquí las señales que lo confirman.",
+        author: "Haza Munguia",
+        date: "Junio 2025",
     },
     {
         classList: "col-lg-3 col-md-6 col-12",
-        linkPost: "/blog-details",
-        linkAuthor: "/team-details",
+        linkPost: "/blog/whatsapp-no-es-suficiente",
+        linkAuthor: "/",
         img: "/assets/imgs/pages/img-98.webp",
-        title: "From Concept to Launch: Building Products That Truly Matter",
-        author: "Daniel",
-        date: "July 8, 2026",
+        category: "Operación",
+        title: "¿Por qué WhatsApp ya no es suficiente para manejar tus clientes?",
+        excerpt: "WhatsApp fue un parche brillante. Pero cuando tu negocio crece, los parches se rompen. Te explicamos qué pasa cuando tu agenda, tus cotizaciones y tu seguimiento viven en una app de mensajería.",
+        author: "Haza Munguia",
+        date: "Mayo 2025",
     },
     {
         classList: "col-lg-3 col-md-6 col-12",
-        linkPost: "/blog-details",
-        linkAuthor: "/team-details",
+        linkPost: "/blog/integrada-vs-medida",
+        linkAuthor: "/",
         img: "/assets/imgs/pages/img-99.webp",
-        title: "Why Strong Visual Identity Is the Foundation of Modern Brands",
-        author: "Emma",
-        date: "July 12, 2026",
+        category: "Guía de Compra",
+        title: "App Integrada vs App a Medida: ¿cuál necesita tu negocio?",
+        excerpt: "No todas las empresas necesitan lo mismo. Esta guía te ayuda a entender cuál de nuestros dos productos resuelve mejor tu operación — sin tecnicismos y sin rodeos.",
+        author: "Haza Munguia",
+        date: "Abril 2025",
     },
     {
         classList: "col-lg-3 col-md-6 col-12",
-        linkPost: "/blog-details",
-        linkAuthor: "/team-details",
+        linkPost: "/blog/costo-sin-sistema",
+        linkAuthor: "/",
         img: "/assets/imgs/pages/img-100.webp",
-        title: "Creating Impactful Interfaces Through Thoughtful Design Systems",
-        author: "Lucas",
-        date: "July 17, 2026",
+        category: "ROI",
+        title: "El costo real de no tener sistema: lo que pierde tu negocio cada mes sin saberlo",
+        excerpt: "Cada mes sin sistema es tiempo de tu equipo perdido, clientes que no regresan y dinero que se va sin rastrearse. Hacemos los números de lo que cuesta operar sin orden digital.",
+        author: "Haza Munguia",
+        date: "Marzo 2025",
     },
 ];
 
@@ -57,8 +65,8 @@ export default function Section8() {
                     <div className="col-lg-3">
                         <span className="at-btn common-black bg-transparent mb-10 rounded-0 p-0">
                             <span className="text-uppercase">
-                                <span className="text-1">INSIDE COMPANY</span>
-                                <span className="text-2">INSIDE COMPANY</span>
+                                <span className="text-1">DESDE EL ESTUDIO</span>
+                                <span className="text-2">DESDE EL ESTUDIO</span>
                             </span>
                             <i>
                                 {ARROW_SVG}
@@ -66,21 +74,20 @@ export default function Section8() {
                             </i>
                         </span>
                         <h3 className="alt-section-title lh-1 neutral-900 fw-700 mb-30 reveal-text mb-0">
-                            Inside the World of AI
+                            Desde el estudio
                         </h3>
                     </div>
                     <div className="col-lg-4 col-md-8">
                         <p className="fz-font-lg neutral-900 fw-500 mb-0">
-                            Explore expert insights on AI innovation, real-world applications, and the future of
-                            intelligent systems.
+                            Ideas, casos y aprendizajes para empresas que quieren digitalizar bien.
                         </p>
                     </div>
                     <div className="col-lg-3 col-md-4 ms-auto text-md-end">
                         <div className="at-service-btn pt-30">
-                            <Link to="/archive-1" className="at-btn">
+                            <Link to="/blog" className="at-btn">
                                 <span>
-                                    <span className="text-1">ALL ARTICLES</span>
-                                    <span className="text-2">ALL ARTICLES</span>
+                                    <span className="text-1">Ver todos los artículos</span>
+                                    <span className="text-2">Ver todos los artículos</span>
                                 </span>
                                 <i>
                                     {ARROW_SVG}
@@ -95,10 +102,12 @@ export default function Section8() {
                         <ArticleCard1
                             key={article.img}
                             classList={article.classList}
+                            category={article.category}
                             linkPost={article.linkPost}
                             linkAuthor={article.linkAuthor}
                             img={article.img}
                             title={article.title}
+                            excerpt={article.excerpt}
                             author={article.author}
                             date={article.date}
                         />

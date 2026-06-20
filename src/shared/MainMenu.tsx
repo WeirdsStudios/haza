@@ -156,97 +156,14 @@ function LinkSwap({ label }: { label: string }) {
 export default function MainMenu() {
   return (
     <MainMenuRootList>
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Home" />
-        </a>
-        <div className="at-submenu submenu at-megamenu">
-          <div className="row">
-            <div className="col-xl-6">
-              <MegaColumn title="Light Version" items={HOME_LIGHT} />
-            </div>
-            <div className="col-xl-6">
-              <MegaColumn title="Dark Version" items={HOME_DARK} />
-            </div>
-          </div>
-        </div>
+      <li>
+        <MenuLink to="/sistema"><LinkSwap label="Sistema" /></MenuLink>
       </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Page" />
-        </a>
-        <div className="at-submenu submenu at-megamenu">
-          <div className="row">
-            <div className="col-xl-4">
-              <MegaColumn title="About Us" items={ABOUT_LINKS} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Services" items={SERVICE_LINKS} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Other" items={OTHER_LINKS} />
-            </div>
-          </div>
-        </div>
+      <li>
+        <MenuLink to="/creaciones"><LinkSwap label="Creaciones" /></MenuLink>
       </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Portfolio" />
-        </a>
-        <div className="at-submenu submenu at-megamenu">
-          <div className="row">
-            <div className="col-xl-4">
-              <MegaColumn title="Creative" items={PORTFOLIO_CREATIVE} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Classic" items={PORTFOLIO_CLASSIC} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Details" items={PORTFOLIO_DETAILS} />
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Shop" />
-        </a>
-        <ul className="at-submenu submenu">
-          {SHOP_LINKS.map((l) => (
-            <li key={l.label}>
-              <MenuLink to={l.to}>{l.label}</MenuLink>
-            </li>
-          ))}
-        </ul>
-      </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="News" />
-        </a>
-        <ul className="at-submenu submenu">
-          {NEWS_LINKS.map((l) => (
-            <li key={l.label}>
-              <MenuLink to={l.to}>{l.label}</MenuLink>
-            </li>
-          ))}
-        </ul>
-      </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Contact" />
-        </a>
-        <ul className="at-submenu submenu">
-          {CONTACT_LINKS.map((l) => (
-            <li key={l.label}>
-              <MenuLink to={l.to}>{l.label}</MenuLink>
-            </li>
-          ))}
-        </ul>
+      <li>
+        <MenuLink to="/consulta"><LinkSwap label="Consultar" /></MenuLink>
       </li>
     </MainMenuRootList>
   );

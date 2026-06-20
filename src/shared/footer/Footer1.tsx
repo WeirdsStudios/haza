@@ -19,30 +19,18 @@ const SOCIAL_ARROW = (
   </svg>
 );
 
-const FOOTER_SERVICES = ["Web Development", "Motion Graphics", "Brand Strategy", "Product Design"];
+const FOOTER_SERVICES = ["App Integrada", "App a Medida", "Acompañamiento", "Consulta"];
 
 const SOCIAL_LINKS = [
-  { label: "Twitter", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "Linkedin", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "Dribbble", href: "#" },
+  { label: "Instagram", href: "https://instagram.com/hazamunguia" },
+  { label: "TikTok", href: "https://tiktok.com/@hazamunguia" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/hazamunguia" },
 ] as const;
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about-1" },
-  { label: "Works", href: "/portfolio-1" },
-  { label: "Blog", href: "/archive-1" },
-  { label: "Contact", href: "/contact-1" },
-] as const;
-
-const SHOP_LINKS = [
-  { label: "Shop", href: "/product-archive" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Cart", href: "/product-cart" },
-  { label: "Checkout", href: "/product-checkout" },
+  { label: "Sistema", href: "/sistema" },
+  { label: "Creaciones", href: "/creaciones" },
+  { label: "Consultar", href: "/consulta" },
 ] as const;
 
 function FooterServiceTag({ label }: { label: string }) {
@@ -69,39 +57,24 @@ export default function Footer1() {
             <div className="col-xxl-4 col-lg-6">
               <div className="d-flex flex-wrap align-items-start gap-4">
                 <img
-                  className="mt-5"
-                  data-width="50"
-                  src="/assets/imgs/template/logo/favicon-dark.svg"
-                  alt="Orisa"
-                  width={50}
-                  height={50}
+                  src="/assets/imgs/hm/logohm_bco_logo.svg"
+                  alt="Haza Munguia"
+                  className="dark-mode-invert"
+                  style={{ height: 32, width: "auto" }}
                 />
-                <div>
-                  <h4 className="text-white reveal-text">
-                    <RevealText>
-                      Let&apos;s Shape <br />
-                      Your Next Idea
-                    </RevealText>
-                  </h4>
-                  <p className="mb-0">
-                    205 North Michigan Avenue, Suite 810 <br />
-                    Chicago, 60601, USA
-                  </p>
-                </div>
               </div>
             </div>
             <div className="col-xxl-3 col-lg-5 col-md-8 ms-lg-auto text-lg-end">
               <div className="at-footer-title-wrap">
-                <h6 className="text-white">(212) 555-7398</h6>
                 <h4 className="text-white text-decoration-underline text-wrap">
-                  <a href="mailto:hello@orisa.com" className="text-white text-decoration-underline">
-                    hello@orisa.com
+                  <a href="mailto:hola@hazamunguia.com" className="text-white text-decoration-underline">
+                    hola@hazamunguia.com
                   </a>
                 </h4>
                 <div className="at-footer-widget at-footer-link pt-50">
                   <div className="at-hero-social justify-content-lg-end">
                     {SOCIAL_LINKS.map(({ label, href }) => (
-                      <a key={label} href={href} onClick={(e) => href === "#" && e.preventDefault()}>
+                      <a key={label} href={href} target="_blank" rel="noopener noreferrer">
                         {label}
                         {SOCIAL_ARROW}
                       </a>
@@ -116,19 +89,10 @@ export default function Footer1() {
             <div className="row align-items-end g-5">
               <div className="col-xxl-3 col-lg-4 col-md-6">
                 <div className="at-footer-widget alt-footer-link-item-wrap row">
-                  <span className="d-block fz-font-label neutral-0 opacity-50 text-uppercase mb-3">Navigation</span>
-                  <div className="alt-footer-link-item col-6">
+                  <span className="d-block fz-font-label neutral-0 opacity-50 text-uppercase mb-3">Navegación</span>
+                  <div className="alt-footer-link-item col-12">
                     <ul>
                       {NAV_LINKS.map(({ label, href }) => (
-                        <li key={label} className="mb-15">
-                          <Link to={href}>{label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="alt-footer-link-item col-6">
-                    <ul>
-                      {SHOP_LINKS.map(({ label, href }) => (
                         <li key={label} className="mb-15">
                           <Link to={href}>{label}</Link>
                         </li>
@@ -139,7 +103,7 @@ export default function Footer1() {
               </div>
               <div className="col-xxl-9 col-lg-8 col-12 text-lg-end">
                 <h1 className="fz-160 common-white mb-0 text-scale-anim">
-                  Orisa Studio<sup className="fz-80 fw-400">®</sup>
+                  Haza Munguia Studio
                 </h1>
               </div>
             </div>
@@ -149,7 +113,7 @@ export default function Footer1() {
             <div className="row align-items-center g-3">
               <div className="col-lg-2">
                 <div className="at-footer-copyright-wrap text">
-                  <span className="at-footer-copyright">Orisa © 2026 </span>
+                  <span className="at-footer-copyright">© 2025 Haza Munguia. Todos los derechos reservados.</span>
                 </div>
               </div>
               <div className="col-lg-8">
@@ -163,7 +127,7 @@ export default function Footer1() {
               </div>
               <div className="col-lg-2">
                 <div className="at-footer-copyright-wrap text-lg-end">
-                  <span className="at-footer-copyright">[ Since 2012 ]</span>
+                  <span className="at-footer-copyright">[ CDMX, México ]</span>
                 </div>
               </div>
             </div>

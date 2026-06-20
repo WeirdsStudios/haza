@@ -7,6 +7,7 @@ export type ArticleCard1Props = {
   linkAuthor: string;
   img: string;
   title: string;
+  excerpt?: string;
   author: string;
   date: string;
 };
@@ -18,6 +19,7 @@ export default function ArticleCard1({
   linkAuthor,
   img,
   title,
+  excerpt,
   author,
   date,
 }: ArticleCard1Props) {
@@ -25,17 +27,19 @@ export default function ArticleCard1({
     <div className={`blog-card ${classList} mb-30`} data-category={category}>
       <div className="blog-card__thumb hover-effect-1">
         <Link to={linkPost} className="blog-card__img-link">
-          <img src={img} className="blog-card__img22" alt="orisa" width={450} height={350} />
+          <img src={img} className="blog-card__img22" alt={title} width={450} height={350} />
         </Link>
       </div>
       <div className="blog-card__content">
+        {category && <span className="blog-card__category fz-font-xs fw-600 text-uppercase opacity-50 d-block mb-1">{category}</span>}
         <h6 className="blog-card__title">
           <Link to={linkPost} className="blog-card__title-link">
             {title}
           </Link>
         </h6>
+        {excerpt && <p className="blog-card__excerpt fz-font-sm opacity-75 mb-2">{excerpt}</p>}
         <p className="blog-card__meta">
-          <span className="blog-card__meta-text">By </span>
+          <span className="blog-card__meta-text">Por </span>
           <Link to={linkAuthor} className="blog-card__author">
             {author}
           </Link>

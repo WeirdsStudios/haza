@@ -77,8 +77,8 @@ const SERVICES = [
         type: "card-1",
         background: "/assets/imgs/pages/img-76.webp",
         icon: ICON_STRATEGY,
-        title: "Strategy & Research",
-        description: "Through research, analysis, and positioning, we build a clear foundation for meaningful digital growth.",
+        title: "Ventas digitales",
+        description: "Tienda online, POS o delivery en una sola plataforma.",
         textWhite: true,
     },
     {
@@ -86,8 +86,8 @@ const SERVICES = [
         img: "/assets/imgs/pages/img-77.webp",
         imgPosition: "bottom",
         icon: ICON_DESIGN,
-        title: "Design & Experience",
-        description: "Every interaction is crafted to balance beauty, usability, and brand personality.",
+        title: "CRM y reservas",
+        description: "Agenda, historial y seguimiento de clientes, automatizado.",
         textWhite: false,
     },
     {
@@ -95,9 +95,8 @@ const SERVICES = [
         imgTop: "/assets/imgs/pages/img-78.webp",
         imgBottom: "/assets/imgs/pages/img-79.webp",
         icon: ICON_NETWORK,
-        title: "Network Integration",
-        description:
-            "From on-premise to cloud environments, we ensure seamless communication, scalability, and operational stability.",
+        title: "Cotizadores inteligentes",
+        description: "El cliente llega a un precio sin que intervengas.",
         textWhite: true,
     },
     {
@@ -106,9 +105,8 @@ const SERVICES = [
         imgPosition: "bottom",
         contentPosition: "top-50",
         icon: ICON_BUILD,
-        title: "Build & Launch",
-        description:
-            "Bring ideas to life with clean, scalable, and performance-driven builds. From development to launch, we focus on reliability and long-term growth.",
+        title: "Atención automatizada",
+        description: "Un agente que responde y califica sin parar.",
         textWhite: false,
     },
 ];
@@ -122,8 +120,8 @@ export default function Section2() {
                         <div className="col-lg-2 col-md-3">
                             <span className="at-btn common-black bg-transparent mb-10 rounded-0 p-0">
                                 <span className="text-uppercase">
-                                    <span className="text-1">what we offer</span>
-                                    <span className="text-2">what we offer</span>
+                                    <span className="text-1">lo que construimos</span>
+                                    <span className="text-2">lo que construimos</span>
                                 </span>
                                 <i>
                                     {ARROW_SVG}
@@ -133,7 +131,7 @@ export default function Section2() {
                             <div className="pt-40 ps-5 d-none d-md-block">
                                 <img
                                     src="/assets/imgs/pages/img-gemstone.webp"
-                                    alt="orisa"
+                                    alt="Haza Munguia"
                                     width={78}
                                     height={110}
                                     className="portfolio-text"
@@ -143,7 +141,7 @@ export default function Section2() {
                         <div className="col-lg-6 col-md-9">
                             <h3 className="reveal-text lh-1">
                                 <RevealText>
-                                    Turning ideas into digital experiences that perform in the real world.
+                                    Tu operación digitalizada. Tu equipo enfocado en lo que importa.
                                 </RevealText>
                             </h3>
                         </div>
@@ -154,7 +152,7 @@ export default function Section2() {
                                         <div className="icon-shape size-60 rounded-2 fix">
                                             <img
                                                 src={src}
-                                                alt="orisa"
+                                                alt="Haza Munguia"
                                                 width={60}
                                                 height={60}
                                                 className="img-cover w-100 h-100" loading="lazy" />
@@ -165,7 +163,7 @@ export default function Section2() {
                             <div className="d-flex gap-3 pt-30">
                                 <div>{QUOTE_SVG}</div>
                                 <span className="neutral-900">
-                                    We design intelligent systems that help businesses think, decide, and scale faster.
+                                    Construimos apps modulares que resuelven cómo tu empresa vende, atiende, cotiza y da seguimiento a sus clientes. Cada módulo funciona solo o como parte de un sistema completo que crece con tu negocio — Disponible en web, móvil y escritorio desde el primer día.
                                 </span>
                             </div>
                         </div>
@@ -199,7 +197,7 @@ export default function Section2() {
                                         <Link to="#" className="p-absolute top-0 left-0">
                                             <img
                                                 src={service.imgTop!}
-                                                alt="orisa"
+                                                alt="Haza Munguia"
                                                 width={400}
                                                 height={300}
                                                 className="img-cover w-100 h-100" loading="lazy" />
@@ -207,7 +205,7 @@ export default function Section2() {
                                         <Link to="#" className="p-absolute bottom-0 start-0 end-0">
                                             <img
                                                 src={service.imgBottom!}
-                                                alt="orisa"
+                                                alt="Haza Munguia"
                                                 width={400}
                                                 height={300}
                                                 className="img-cover w-100 h-100" loading="lazy" />
@@ -227,7 +225,7 @@ export default function Section2() {
                                         <Link to="#" className="p-absolute bottom-0 start-0 end-0">
                                             <img
                                                 src={service.img!}
-                                                alt="orisa"
+                                                alt="Haza Munguia"
                                                 width={400}
                                                 height={300}
                                                 className="img-cover w-100 h-100" loading="lazy" />

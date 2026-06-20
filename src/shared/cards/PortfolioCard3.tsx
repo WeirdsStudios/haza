@@ -15,8 +15,10 @@ export type PortfolioCard3Props = {
     title: string;
     metricPrefix: string;
     metricValue: string;
+    metricSuffix?: string;
     metricLabel: string;
     tags: string[];
+    linkLabel?: string;
 };
 
 export default function PortfolioCard3({
@@ -27,8 +29,10 @@ export default function PortfolioCard3({
     title,
     metricPrefix,
     metricValue,
+    metricSuffix = "%",
     metricLabel,
     tags,
+    linkLabel = "VER DETALLE",
 }: PortfolioCard3Props) {
     return (
         <div
@@ -47,13 +51,17 @@ export default function PortfolioCard3({
                     </Link>
                     <div className="card_case__studies-metric-overlay">
                         <h4 className="card_case__studies-metric-value mb-0">
-                            <OdometerCounter
-                                count={Number(metricValue) || 0}
-                                prefix={metricPrefix}
-                                suffix="%"
-                            />
+                            {Number.isNaN(Number(metricValue)) ? (
+                                <span>{metricPrefix}{metricValue}</span>
+                            ) : (
+                                <OdometerCounter
+                                    count={Number(metricValue)}
+                                    prefix={metricPrefix}
+                                    suffix={metricSuffix}
+                                />
+                            )}
                         </h4>
-                        <span className="card_case__studies-metric-label">{metricLabel}</span>
+                        {metricLabel && <span className="card_case__studies-metric-label">{metricLabel}</span>}
                     </div>
                     <div className="card_case__studies-tags-overlay">
                         {tags.map((tag) => (
@@ -68,7 +76,7 @@ export default function PortfolioCard3({
                         <Link to={link}>{title}</Link>
                     </h5>
                     <Link to={link} className="card_case__studies-link text-white">
-                        <span className="text-white text-nowrap">View case</span>
+                        <span className="text-white text-nowrap">{linkLabel}</span>
                         {PLUS_ICON}
                     </Link>
                 </div>

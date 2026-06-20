@@ -16,7 +16,7 @@ export default function Topbar() {
                                     <span>(+01) - 456 789</span>
                                 </Link>
                                 <Link to="#" className="fz-font-body text-white fw-500">
-                                    <span>hello@orisa.com</span>
+                                    <span>hola@hazamunguia.com</span>
                                 </Link>
                             </div>
                         </div>

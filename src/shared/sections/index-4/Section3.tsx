@@ -26,31 +26,35 @@ const PROCESS_CARDS = [
         cardClass: "card-1",
         pillClass: "card__process-pill--1",
         num: "01",
-        title: "Discover & Diagnose",
+        title: "App Integrada",
         description:
-            "We analyze your market, audience, data, and existing performance to uncover real growth opportunities.",
+            "Un sistema construido desde módulos funcionales que digitalizan la operación completa de tu empresa. Elige los módulos que necesitas hoy y escala cuando estés listo.",
+        price: "Desde $15,000 MXN · IVA incluido",
     },
     {
         cardClass: "card-2",
         pillClass: "card__process-pill--2",
         num: "02",
-        title: "Strategy & Plan",
+        title: "App a Medida",
         description:
-            "We craft data-driven strategies tailored to your goals, ensuring every decision is backed by insights.",
+            "Para empresas que necesitan una solución construida desde cero alrededor de sus procesos únicos. Sin compromisos con plantillas ni soluciones genéricas.",
+        price: "Desde $35,000 MXN · IVA incluido",
     },
     {
         cardClass: "card-3",
         pillClass: "card__process-pill--3",
         num: "03",
-        title: "Execute & Optimize",
-        description: "We implement with precision and continuously optimize to maximize impact and ROI.",
+        title: "Acompañamiento",
+        description: "Te llevamos de la mano en el manejo y evolución de tu plataforma. Tu equipo siempre tiene soporte, actualizaciones y mejoras continuas mes a mes.",
+        price: "Desde $6,000 MXN / mes · mínimo 6 meses",
     },
     {
         cardClass: "card-4",
         pillClass: "card__process-pill--4",
         num: "04",
-        title: "Scale & Sustain",
-        description: "We help you scale what works and build sustainable systems for long-term growth.",
+        title: "Consulta Gratuita",
+        description: "Antes de cualquier propuesta, entendemos tu operación a fondo. Sin costo, sin compromiso. Solo una conversación honesta sobre lo que necesitas.",
+        price: "Sin costo · Sin compromiso",
     },
 ];
 
@@ -93,8 +97,8 @@ export default function Section3() {
                         <div className="col-lg-6 col-md-10">
                             <span className="at-btn common-black text-uppercase bg-transparent mb-10 rounded-0 p-0">
                                 <span className="text-uppercase">
-                                    <span className="text-1">HOW WE WORK</span>
-                                    <span className="text-2">HOW WE WORK</span>
+                                    <span className="text-1">El Sistema</span>
+                                    <span className="text-2">El Sistema</span>
                                 </span>
                                 <i>
                                     {ARROW_SVG}
@@ -103,7 +107,7 @@ export default function Section3() {
                             </span>
                             <h3 className="reveal-text mb-0">
                                 <RevealText>
-                                    A structured process built for real-world impact
+                                    Todo lo que necesitas para digitalizar tu operación.
                                 </RevealText>
                             </h3>
                         </div>
@@ -114,13 +118,13 @@ export default function Section3() {
                                 data-fade-from="bottom"
                                 data-ease="bounce"
                             >
-                                <Link className="at-btn-circle" to="/contact-1">
+                                <Link className="at-btn-circle" to="/consulta">
                                     {ARROW_CIRCLE}
                                 </Link>
-                                <Link className="at-btn z-index-1" to="/contact-1">
-                                    Get a free quote
+                                <Link className="at-btn z-index-1" to="/consulta">
+                                    Consultar
                                 </Link>
-                                <Link className="at-btn-circle" to="/contact-1">
+                                <Link className="at-btn-circle" to="/consulta">
                                     {ARROW_CIRCLE}
                                 </Link>
                             </div>
@@ -138,6 +142,9 @@ export default function Section3() {
                                     <div className="card__process-content">
                                         <h6 className="card__process-title">{card.title}</h6>
                                         <p className="card__process-desc">{card.description}</p>
+                                        <span style={{ fontSize: 11, fontWeight: 300, opacity: 0.45, letterSpacing: '0.02em', display: 'block', marginTop: 6 }}>
+                                            {card.price}
+                                        </span>
                                         <div className="card__process-divider" />
                                     </div>
                                 </div>
@@ -155,7 +162,7 @@ export default function Section3() {
                             >
                                 <img
                                     src="/assets/imgs/pages/img-85.webp"
-                                    alt="orisa"
+                                    alt="Haza Munguia"
                                     width={400}
                                     height={400}
                                     className="w-100" loading="lazy" />
@@ -165,8 +172,7 @@ export default function Section3() {
                             <div className="mb-3">{QUOTE_ICON}</div>
                             <span className="fz-font-3xl neutral-900 reveal-text">
                                 <RevealText>
-                                    We design intelligent systems that help businesses think, decide, and scale
-                                    faster.
+                                    Diseñamos sistemas inteligentes que ayudan a las empresas a pensar, decidir y crecer más rápido.
                                 </RevealText>
                             </span>
                         </div>

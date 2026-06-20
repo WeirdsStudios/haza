@@ -25,13 +25,13 @@ const CARDS_IMGS = [
     "/assets/imgs/pages/img-75.webp",
 ];
 
-const TAGS = ["LLMs", "Data pipelines", "Data pipelines", "Automation tools", "Cloud & APIs"];
+const TAGS = ["Ventas Digitales", "CRM y Reservas", "Cotizadores IA", "Agentes de Servicio"];
 
 const FOOTER_NAV = [
-    { label: "Web Development", href: "/services-1" },
-    { label: "Design & Experience", href: "/services-1" },
-    { label: "Network Integration", href: "/services-1" },
-    { label: "Build & Launch", href: "/services-1" },
+    { label: "App Integrada", href: "/creaciones" },
+    { label: "App a Medida", href: "/creaciones" },
+    { label: "Acompañamiento", href: "/sistema" },
+    { label: "Sistemas a Medida", href: "/creaciones" },
 ];
 
 function AtBtn({
@@ -75,7 +75,7 @@ function AtBtnBorder({ href, label }: { href: string; label: string }) {
 export default function Section1() {
     return (
         <div className="bg-neutral-50">
-            <div className="container-2200 sec-1-home-4-wrap p-relative z-0 pt-85">
+            <div className="container-2200 sec-1-home-4-wrap p-relative z-0" style={{ paddingTop: '70px' }}>
                 <div
                     className="sec-1-home-4 bg-linear-opacity p-relative bg-cover mt-20 rounded-5 mx-lg-3 mx-2"
                     data-background="/assets/imgs/pages/bg-img-4.webp"
@@ -84,21 +84,21 @@ export default function Section1() {
                         <div className="row align-items-start">
                             <div className="col-12">
                                 <span className="sec-1-home-4__tagline d-inline-block mb-30">
-                                    [AI & TECHNOLOGY AGENCY ]
+                                    [ Design Engineering Studio ]
                                 </span>
                             </div>
                             <div className="col-xxl-5 col-lg-5 mb-5 mb-lg-0 pe-xxl-5">
                                 <h4 className="sec-1-home-4__headline fw-600 text-white mb-4 mb-md-5 lh-1">
-                                    From strategy to execution, we turn intelligence into real-world impact.
+                                    Construimos sistemas digitales que mueven tu negocio e impulsan tus ventas.
                                 </h4>
                                 <div className="sec-1-home-4__btns d-flex flex-wrap gap-3">
-                                    <AtBtn href="/services-1">
-                                        <span className="text-1">EXPLORE SOLUTIONS</span>
-                                        <span className="text-2">EXPLORE SOLUTIONS</span>
+                                    <AtBtn href="/creaciones">
+                                        <span className="text-1">VER CREACIONES</span>
+                                        <span className="text-2">VER CREACIONES</span>
                                     </AtBtn>
-                                    <AtBtn href="/portfolio-4">
-                                        <span className="text-1">VIEW CASE STUDIES</span>
-                                        <span className="text-2">VIEW CASE STUDIES</span>
+                                    <AtBtn href="/consulta">
+                                        <span className="text-1">CONSULTAR</span>
+                                        <span className="text-2">CONSULTAR</span>
                                     </AtBtn>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ export default function Section1() {
                                         <div key={i} className="sec-1-home-4__card rounded-3 overflow-hidden">
                                             <img
                                                 src={src}
-                                                alt="orisa"
+                                                alt="Haza Munguia"
                                                 width={280}
                                                 height={200}
                                                 className="img-cover w-100 h-100" loading="lazy" />
@@ -126,23 +126,7 @@ export default function Section1() {
                             </div>
                         </div>
 
-                        <div className="sec-1-home-4__footer pt-60 pt-lg-8 mt-5 mt-lg-8">
-                            <h2 className="sec-1-home-4__brand fz-200 text-white mb-4 text-scale-anim">
-                                Orisa AI Solutions
-                                <span className="sec-1-home-4__brand-suffix">
-                                    <sup>®</sup>
-                                </span>
-                            </h2>
-                            <div className="container p-relative z-index-2">
-                                <div className="row">
-                                    {FOOTER_NAV.map((item, i) => (
-                                        <div key={i} className="col-lg-3 col-md-6 col-12 text-center">
-                                            <AtBtnBorder href={item.href} label={item.label} />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                        {/* Running text + footer nav removed — replaced by CotizadorSection below */}
                     </div>
                 </div>
             </div>

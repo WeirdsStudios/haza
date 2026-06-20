@@ -159,8 +159,8 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
                 </a>
               </li>
               <li>
-                <a className="fz-font-lg" href="mailto:hello@orisa.com">
-                  hello@orisa.com
+                <a className="fz-font-lg" href="mailto:hola@hazamunguia.com">
+                  hola@hazamunguia.com
                 </a>
               </li>
               <li>
@@ -187,14 +187,11 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
             <div className="at-header-logo d-flex justify-content-between align-items-center mb-50">
               <Link to="/" className="text-decoration-none d-inline-flex align-items-center gap-2">
                 <img
+                  src="/assets/imgs/hm/logohm_logo.svg"
+                  alt="Haza Munguia"
                   className="dark-mode-invert"
-                  data-width="30"
-                  src="/assets/imgs/template/logo/favicon.svg"
-                  alt="Orisa"
-                  width={30}
-                  height={30}
+                  style={{ height: 36, width: "auto" }}
                 />
-                <h6 className="fw-700 fz-24 mb-0">Orisa</h6>
               </Link>
               <span className="hamburger-close-btn close-sidebar" role="button" tabIndex={0} aria-label="Close" onClick={onClose}>
                 <CloseIconSvg />

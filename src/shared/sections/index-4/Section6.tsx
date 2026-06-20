@@ -12,28 +12,14 @@ const ARROW_SVG = (
 
 const TEAM_MEMBERS = [
     {
-        classList: "col-xxl-4 col-lg-6 col-12",
-        link: "/team-details",
-        img: "/assets/imgs/pages/img-94.webp",
-        name: "Alex Morgan",
+        classList: "col-lg-8 col-12 mx-auto",
+        link: "/",
+        img: "/assets/imgs/hm/haza1.webp",
+        name: "Haza Munguia",
         delay: ".2",
-        position: "Creative Director",
-    },
-    {
-        classList: "col-xxl-4 col-lg-6 col-12",
-        link: "/team-details",
-        img: "/assets/imgs/pages/img-95.webp",
-        name: "Alex Morgan",
-        delay: ".5",
-        position: "Data & Analytics Lead",
-    },
-    {
-        classList: "col-xxl-4 col-lg-6 col-12",
-        link: "/team-details",
-        img: "/assets/imgs/pages/img-96.webp",
-        name: "Alex Morgan",
-        delay: ".8",
-        position: "Technology Architect",
+        position: "Design Engineer · Fundador",
+        bio: "Más de 10 años construyendo productos digitales donde el diseño y la ingeniería no se separan. Empecé diseñando, me convertí en ingeniero porque las buenas ideas necesitan sistemas que las sostengan. Hoy construyo apps que digitalizan operaciones reales para empresas en crecimiento en México.",
+        skills: ["UX Design", "Flutter", "Sistemas", "Estrategia", "CDMX"],
     },
 ];
 
@@ -45,8 +31,8 @@ export default function Section6() {
                     <div className="col-xxl-1 col-lg-2 col-md-3">
                         <span className="at-btn common-black bg-transparent mb-10 rounded-0 p-0">
                             <span className="text-uppercase">
-                                <span className="text-1">Our Team</span>
-                                <span className="text-2">Our Team</span>
+                                <span className="text-1">Quién está detrás</span>
+                                <span className="text-2">Quién está detrás</span>
                             </span>
                             <i>
                                 {ARROW_SVG}
@@ -56,15 +42,15 @@ export default function Section6() {
                     </div>
                     <div className="col-lg-7 col-md-7">
                         <h3 className="reveal-text">
-                            Meet our dedicated <br /> and skilled team
+                            Dirijo cada proyecto con visión estratégica, apoyado en los mejores colaboradores y herramientas disponibles — todo orientado a un solo resultado: que tu negocio funcione mejor.
                         </h3>
                     </div>
                     <div className="col-lg-3 col-md-5 ms-auto text-center">
                         <h1 className="fz-ds-1 fw-500 mb-0 lh-1">
-                            <OdometerCounter count={190} suffix="+" />
+                            <OdometerCounter count={10} suffix="+" />
                         </h1>
                         <h6 className="fw-500 mb-0">
-                            Projects have been <br /> completed.
+                            Años en diseño <br /> e ingeniería
                         </h6>
                     </div>
                 </div>
@@ -78,6 +64,8 @@ export default function Section6() {
                             name={member.name}
                             delay={member.delay}
                             position={member.position}
+                            bio={member.bio}
+                            skills={member.skills}
                         />
                     ))}
                 </div>
