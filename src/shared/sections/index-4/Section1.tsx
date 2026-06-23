@@ -28,10 +28,10 @@ const CARDS_IMGS = [
 const TAGS = ["Ventas Digitales", "CRM y Reservas", "Cotizadores IA", "Agentes de Servicio"];
 
 const FOOTER_NAV = [
-    { label: "App Integrada", href: "/creaciones" },
-    { label: "App a Medida", href: "/creaciones" },
-    { label: "Acompañamiento", href: "/sistema" },
-    { label: "Sistemas a Medida", href: "/creaciones" },
+    { label: "App Integrada ↗", href: "/sistema" },
+    { label: "App a Medida ↗", href: "/sistema" },
+    { label: "Acompañamiento ↗", href: "/sistema" },
+    { label: "Consulta Gratuita ↗", href: "/consulta" },
 ];
 
 function AtBtn({
@@ -88,13 +88,16 @@ export default function Section1() {
                                 </span>
                             </div>
                             <div className="col-xxl-5 col-lg-5 mb-5 mb-lg-0 pe-xxl-5">
-                                <h4 className="sec-1-home-4__headline fw-600 text-white mb-4 mb-md-5 lh-1">
-                                    Construimos sistemas digitales que mueven tu negocio e impulsan tus ventas.
+                                <h4 className="sec-1-home-4__headline fw-600 text-white mb-3 lh-1">
+                                    Construimos software a medida para empresas que ya operan y quieren escalar.
                                 </h4>
+                                <p className="text-white opacity-75 mb-4 mb-md-5" style={{ fontSize: 16, lineHeight: 1.6 }}>
+                                    Apps construidas desde módulos funcionales que digitalizan tu operación completa. Una sola plataforma — web, móvil y escritorio.
+                                </p>
                                 <div className="sec-1-home-4__btns d-flex flex-wrap gap-3">
                                     <AtBtn href="/creaciones">
-                                        <span className="text-1">VER CREACIONES</span>
-                                        <span className="text-2">VER CREACIONES</span>
+                                        <span className="text-1">VER DEMOS</span>
+                                        <span className="text-2">VER DEMOS</span>
                                     </AtBtn>
                                     <AtBtn href="/consulta">
                                         <span className="text-1">CONSULTAR</span>
@@ -126,7 +129,12 @@ export default function Section1() {
                             </div>
                         </div>
 
-                        {/* Running text + footer nav removed — replaced by CotizadorSection below */}
+                        {/* Franja inferior de servicios */}
+                        <div className="sec-1-home-4__footer-nav d-flex flex-wrap gap-0 pt-30 mt-40" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+                            {FOOTER_NAV.map((item) => (
+                                <AtBtnBorder key={item.label} href={item.href} label={item.label} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

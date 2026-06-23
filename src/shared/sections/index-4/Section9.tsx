@@ -57,7 +57,7 @@ export default function Section9() {
                 <div className="row g-5 align-items-center" style={{ minHeight: 500 }}>
                     {/* Left column — 40% */}
                     <div className="col-lg-5">
-                        <h2 className="fw-700 mb-4">Cuéntanos sobre tu negocio</h2>
+                        <h2 className="fw-700 mb-4">¿Listo para digitalizar tu operación?</h2>
                         <p className="fz-font-lg mb-4 opacity-75">
                             Aquí puedes iniciar una conversación directa con nuestro sistema. Cuéntanos cómo funciona tu operación hoy, qué problemas quieres resolver y qué esperas de un sistema digital. Sin formularios, sin pasos complicados — solo una conversación honesta sobre lo que necesitas.
                         </p>

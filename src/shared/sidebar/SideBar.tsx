@@ -118,8 +118,7 @@ export default function SideBar({ open, hamburgerOpen, onClose }: SideBarProps) 
           <div className="at-offcanvas-top d-flex align-items-center justify-content-between">
             <div className="at-offcanvas-logo">
               <Link to="/" className="text-decoration-none d-inline-flex align-items-center gap-2">
-                <img data-width="30" src="/assets/imgs/template/logo/favicon.svg" alt="Orisa" width={30} height={30} />
-                <h6 className="fw-700 fz-24 mb-0">Orisa</h6>
+                <img data-width="30" src="/assets/imgs/hm/logohm_isotipo.svg" alt="Haza Munguia" width={30} height={30} className="dark-mode-invert" />
               </Link>
             </div>
             <div className="at-offcanvas-close-btn">

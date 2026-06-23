@@ -169,6 +169,22 @@ export default function Section2() {
                         </div>
                     </div>
 
+                    {/* Stats */}
+                    <div className="row g-4 pb-50">
+                        <div className="col-lg-4 col-md-4 text-center">
+                            <h2 className="fw-700 mb-1">10+</h2>
+                            <p className="neutral-900 mb-0">Años en diseño e ingeniería</p>
+                        </div>
+                        <div className="col-lg-4 col-md-4 text-center">
+                            <h2 className="fw-700 mb-1">3</h2>
+                            <p className="neutral-900 mb-0">Plataformas: web, móvil y escritorio</p>
+                        </div>
+                        <div className="col-lg-4 col-md-4 text-center">
+                            <h2 className="fw-700 mb-1">5</h2>
+                            <p className="neutral-900 mb-0">Módulos disponibles</p>
+                        </div>
+                    </div>
+
                     <div className="row g-3">
                         {SERVICES.map((service, index) => (
                             <div key={index} className="col-lg-3 col-md-6">
@@ -249,6 +265,20 @@ export default function Section2() {
                                 )}
                             </div>
                         ))}
+                    </div>
+                    <div className="row pt-50">
+                        <div className="col-12 d-flex justify-content-center">
+                            <Link to="/sistema" className="at-btn text-white rounded-0">
+                                <span>
+                                    <span className="text-1">Ver el Sistema</span>
+                                    <span className="text-2">Ver el Sistema</span>
+                                </span>
+                                <i>
+                                    {ARROW_SVG}
+                                    {ARROW_SVG}
+                                </i>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

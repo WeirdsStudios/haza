@@ -113,7 +113,7 @@ export default function Footer1() {
             <div className="row align-items-center g-3">
               <div className="col-lg-2">
                 <div className="at-footer-copyright-wrap text">
-                  <span className="at-footer-copyright">© 2025 Haza Munguia. Todos los derechos reservados.</span>
+                  <span className="at-footer-copyright">© 2025 Haza Munguia Studio. Todos los derechos reservados.</span>
                 </div>
               </div>
               <div className="col-lg-8">

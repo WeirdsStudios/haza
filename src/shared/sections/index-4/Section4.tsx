@@ -29,15 +29,6 @@ const PLUS_ICON = (
     </svg>
 );
 
-const PLAY_ICON = (
-    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="44" viewBox="0 0 35 44" fill="none">
-        <path
-            d="M6.40193e-06 5.72002V38.28C6.40193e-06 40.7629 2.76819 42.2714 4.90001 40.92L30.8 24.64C31.2534 24.3566 31.6269 23.9644 31.8858 23.5001C32.1446 23.0358 32.2803 22.5144 32.2803 21.9843C32.2803 21.4543 32.1446 20.9328 31.8858 20.4685C31.6269 20.0042 31.2534 19.612 30.8 19.3286L4.90001 3.08002C4.42009 2.77341 3.86529 2.60044 3.29413 2.57934C2.72298 2.55824 2.15665 2.6898 1.65488 2.96014C1.15312 3.23048 0.734523 3.62957 0.443259 4.11532C0.151995 4.60107 -0.00114111 5.15546 6.40193e-06 5.72002Z"
-            fill="#FEFEFE"
-        />
-    </svg>
-);
-
 const DIAMOND_ICON = (
     <svg xmlns="http://www.w3.org/2000/svg" width="83" height="83" viewBox="0 0 83 83" fill="none">
         <path
@@ -50,10 +41,11 @@ const DIAMOND_ICON = (
 );
 
 const FEATURED_TAGS = [
-    "APP INTEGRADA",
-    "APP A MEDIDA",
-    "ACOMPAÑAMIENTO",
-    "SISTEMAS",
+    "RESERVAS",
+    "E-COMMERCE",
+    "COTIZADOR",
+    "RESTAURANTE",
+    "CLÍNICA",
 ];
 
 const PORTFOLIO_CARDS = [
@@ -94,8 +86,8 @@ export default function Section4() {
                         <div className="col-xxl-6 col-lg-6">
                             <span className="at-btn common-black text-uppercase bg-transparent mb-10 rounded-0 p-0">
                                 <span className="text-uppercase">
-                                    <span className="text-1">Para tu industria</span>
-                                    <span className="text-2">Para tu industria</span>
+                                    <span className="text-1">Demos en vivo</span>
+                                    <span className="text-2">Demos en vivo</span>
                                 </span>
                                 <i>
                                     {ARROW_SVG}
@@ -103,7 +95,7 @@ export default function Section4() {
                                 </i>
                             </span>
                             <h3 className="reveal-text mb-0">
-                                <RevealText>Soluciones que se adaptan al tipo y tamaño de tu operación.</RevealText>
+                                <RevealText>Explora sistemas reales funcionando en diferentes industrias.</RevealText>
                             </h3>
                         </div>
                         <div className="col-lg-3 ms-auto d-flex justify-content-lg-end">
@@ -113,13 +105,13 @@ export default function Section4() {
                                 data-fade-from="bottom"
                                 data-ease="bounce"
                             >
-                                <Link className="at-btn-circle" to="/sistema">
+                                <Link className="at-btn-circle" to="/creaciones">
                                     {ARROW_CIRCLE}
                                 </Link>
-                                <Link className="at-btn z-index-1" to="/sistema">
-                                    Ver el Sistema
+                                <Link className="at-btn z-index-1" to="/creaciones">
+                                    Ver todos los demos
                                 </Link>
-                                <Link className="at-btn-circle" to="/sistema">
+                                <Link className="at-btn-circle" to="/creaciones">
                                     {ARROW_CIRCLE}
                                 </Link>
                             </div>
@@ -133,31 +125,31 @@ export default function Section4() {
                             <div className="card_case__studies-list">
                                 <div className="card_case__studies-card">
                                     <div className="card_case__studies-left">
-                                        <span className="card_case__studies-featured-tag">PARA TU NEGOCIO</span>
+                                        <span className="card_case__studies-featured-tag">DISPONIBLE AHORA</span>
                                         <h4 className="card_case__studies-title">
-                                            <Link to="/sistema">
-                                                Sistemas que resuelven cómo vendes, atiendes y consigues clientes.
+                                            <Link to="/creaciones">
+                                                5 demos funcionales listos para explorar
                                             </Link>
                                         </h4>
                                         <p className="card_case__studies-desc">
-                                            No importa si tienes una clínica, un restaurante, una tienda o un despacho profesional — construimos el sistema que necesita tu operación específica, sin soluciones genéricas.
+                                            Reservas, tiendas, cotizadores, menús digitales y sistemas de citas — todos funcionando con datos reales. Cada demo muestra también la vista del dueño del negocio.
                                         </p>
                                         <div className="card_case__studies-metrics">
                                             <div className="card_case__studies-metric">
                                                 <h4 className="card_case__studies-metric-value mb-0">
-                                                    <OdometerCounter count={10} prefix="" suffix="+" />
+                                                    <OdometerCounter count={5} prefix="" suffix="" />
                                                 </h4>
                                                 <span className="card_case__studies-metric-label">
-                                                    Años en diseño e ingeniería
+                                                    Demos disponibles
                                                 </span>
                                             </div>
                                             <div className="card_case__studies-metric-divider" />
                                             <div className="card_case__studies-metric">
                                                 <h4 className="card_case__studies-metric-value mb-0">
-                                                    <OdometerCounter count={3} prefix="" suffix="" />
+                                                    <OdometerCounter count={4} prefix="" suffix="" />
                                                 </h4>
                                                 <span className="card_case__studies-metric-label">
-                                                    Plataformas: web, móvil y escritorio
+                                                    Módulos disponibles
                                                 </span>
                                             </div>
                                         </div>
@@ -169,31 +161,22 @@ export default function Section4() {
                                                     </Link>
                                                 ))}
                                             </div>
-                                            <Link to="/sistema" className="card_case__studies-link text-white">
-                                                <span className="text-white text-nowrap">EXPLORAR</span>
+                                            <Link to="/creaciones" className="card_case__studies-link text-white">
+                                                <span className="text-white text-nowrap">EXPLORAR DEMOS</span>
                                                 {PLUS_ICON}
                                             </Link>
                                         </div>
                                     </div>
                                     <div className="card_case__studies-right">
                                         <div className="card_case__studies-thumb anim-zoomin">
-                                            <Link to="#">
+                                            <Link to="/creaciones">
                                                 <img
                                                     src="/assets/imgs/pages/img-86.webp"
-                                                    alt="AI-Driven Demand Forecasting System"
+                                                    alt="Demos funcionales Haza Munguia"
                                                     width={800}
                                                     height={500}
                                                     className="w-100 h-100" loading="lazy" />
                                             </Link>
-                                            <div className="card_case__studies-play p-relative postbox-play-btn">
-                                                <a
-                                                    className="popup-video size-100"
-                                                    href="https://www.youtube.com/watch?v=VCPGMjCW0is"
-                                                    target="_blank"
-                                                >
-                                                    <span className="text-white">{PLAY_ICON}</span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

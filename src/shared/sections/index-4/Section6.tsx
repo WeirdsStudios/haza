@@ -18,8 +18,8 @@ const TEAM_MEMBERS = [
         name: "Haza Munguia",
         delay: ".2",
         position: "Design Engineer · Fundador",
-        bio: "Más de 10 años construyendo productos digitales donde el diseño y la ingeniería no se separan. Empecé diseñando, me convertí en ingeniero porque las buenas ideas necesitan sistemas que las sostengan. Hoy construyo apps que digitalizan operaciones reales para empresas en crecimiento en México.",
-        skills: ["UX Design", "Flutter", "Sistemas", "Estrategia", "CDMX"],
+        bio: "Más de 10 años construyendo productos digitales donde el diseño y la ingeniería no se separan. Dirijo cada proyecto con visión estratégica, apoyado en los mejores colaboradores y herramientas disponibles — orientado a un solo resultado: que tu negocio funcione mejor.",
+        skills: ["UX Design", "Flutter", "Next.js", "Estrategia", "CDMX"],
     },
 ];
 
@@ -42,7 +42,7 @@ export default function Section6() {
                     </div>
                     <div className="col-lg-7 col-md-7">
                         <h3 className="reveal-text">
-                            Dirijo cada proyecto con visión estratégica, apoyado en los mejores colaboradores y herramientas disponibles — todo orientado a un solo resultado: que tu negocio funcione mejor.
+                            Dirijo cada proyecto con visión estratégica, apoyado en los mejores colaboradores y herramientas disponibles.
                         </h3>
                     </div>
                     <div className="col-lg-3 col-md-5 ms-auto text-center">
