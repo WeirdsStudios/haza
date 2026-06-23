@@ -130,7 +130,7 @@ export default function Section1() {
                         </div>
 
                         {/* Franja inferior de servicios */}
-                        <div className="sec-1-home-4__footer-nav d-flex flex-wrap gap-0 pt-30 mt-40" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+                        <div className="sec-1-home-4__footer-nav d-flex flex-column flex-sm-row flex-wrap align-items-start align-items-sm-center gap-3 pt-30 mt-40" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
                             {FOOTER_NAV.map((item) => (
                                 <AtBtnBorder key={item.label} href={item.href} label={item.label} />
                             ))}

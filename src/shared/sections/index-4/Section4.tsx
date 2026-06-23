@@ -48,6 +48,39 @@ const FEATURED_TAGS = [
     "CLÍNICA",
 ];
 
+const DEMO_CARDS = [
+    {
+        title: "CotizaPro",
+        badge: "SERVICIOS PROFESIONALES",
+        desc: "Genera cotizaciones automáticas al instante. Para despachos, consultoras y empresas de servicios.",
+        img: "/assets/imgs/pages/img-80.webp",
+    },
+    {
+        title: "Reserva+",
+        badge: "HOSPITALIDAD Y TURISMO",
+        desc: "Reservas, disponibilidad y perfil de huésped en tiempo real. Para hoteles, experiencias y eventos.",
+        img: "/assets/imgs/pages/img-81.webp",
+    },
+    {
+        title: "VidaClínica",
+        badge: "SALUD Y BIENESTAR",
+        desc: "Agenda de citas, historial de pacientes y recordatorios automáticos. Para clínicas y spas.",
+        img: "/assets/imgs/pages/img-82.webp",
+    },
+    {
+        title: "La Carta",
+        badge: "RESTAURANTES Y ALIMENTOS",
+        desc: "Menú digital, pedidos en línea y panel de administración. Para restaurantes y dark kitchens.",
+        img: "/assets/imgs/pages/img-83.webp",
+    },
+    {
+        title: "Selecto",
+        badge: "RETAIL Y E-COMMERCE",
+        desc: "Tienda completa con carrito, pagos y gestión de inventario. Para tiendas físicas y en línea.",
+        img: "/assets/imgs/pages/img-84.webp",
+    },
+];
+
 const PORTFOLIO_CARDS = [
     {
         classList: "col-lg-6",
@@ -168,15 +201,35 @@ export default function Section4() {
                                         </div>
                                     </div>
                                     <div className="card_case__studies-right">
-                                        <div className="card_case__studies-thumb anim-zoomin">
-                                            <Link to="/creaciones">
-                                                <img
-                                                    src="/assets/imgs/pages/img-86.webp"
-                                                    alt="Demos funcionales Haza Munguia"
-                                                    width={800}
-                                                    height={500}
-                                                    className="w-100 h-100" loading="lazy" />
-                                            </Link>
+                                        <div className="row g-3">
+                                            {DEMO_CARDS.slice(0, 4).map((demo) => (
+                                                <div key={demo.title} className="col-6">
+                                                    <Link to="/creaciones" className="text-decoration-none d-block" style={{ borderRadius: 12, overflow: 'hidden', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', transition: 'transform 0.2s' }}
+                                                        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+                                                        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                                                    >
+                                                        <img src={demo.img} alt={demo.title} style={{ width: '100%', height: 120, objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                                        <div style={{ padding: '0.75rem' }}>
+                                                            <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--at-theme-primary)', display: 'block', marginBottom: 4 }}>{demo.badge}</span>
+                                                            <h6 style={{ color: '#fff', fontSize: 13, fontWeight: 700, marginBottom: 4, lineHeight: 1.2 }}>{demo.title}</h6>
+                                                            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, lineHeight: 1.45, margin: 0 }}>{demo.desc}</p>
+                                                        </div>
+                                                    </Link>
+                                                </div>
+                                            ))}
+                                            <div className="col-6 offset-3">
+                                                <Link to="/creaciones" className="text-decoration-none d-block" style={{ borderRadius: 12, overflow: 'hidden', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', transition: 'transform 0.2s' }}
+                                                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+                                                    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                                                >
+                                                    <img src={DEMO_CARDS[4].img} alt={DEMO_CARDS[4].title} style={{ width: '100%', height: 120, objectFit: 'cover', display: 'block' }} loading="lazy" />
+                                                    <div style={{ padding: '0.75rem' }}>
+                                                        <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--at-theme-primary)', display: 'block', marginBottom: 4 }}>{DEMO_CARDS[4].badge}</span>
+                                                        <h6 style={{ color: '#fff', fontSize: 13, fontWeight: 700, marginBottom: 4, lineHeight: 1.2 }}>{DEMO_CARDS[4].title}</h6>
+                                                        <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, lineHeight: 1.45, margin: 0 }}>{DEMO_CARDS[4].desc}</p>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

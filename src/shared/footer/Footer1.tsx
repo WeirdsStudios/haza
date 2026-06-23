@@ -66,7 +66,7 @@ export default function Footer1() {
             </div>
             <div className="col-xxl-3 col-lg-5 col-md-8 ms-lg-auto text-lg-end">
               <div className="at-footer-title-wrap">
-                <h4 className="text-white text-decoration-underline text-wrap">
+                <h4 className="text-white text-decoration-underline text-wrap" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', wordBreak: 'break-all', maxWidth: '100%', overflow: 'hidden' }}>
                   <a href="mailto:hola@hazamunguia.com" className="text-white text-decoration-underline">
                     hola@hazamunguia.com
                   </a>
